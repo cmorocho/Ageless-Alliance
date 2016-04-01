@@ -13,8 +13,9 @@
     <script src="materialize/css/materialize.min.js"></script>
     <script src="materialize/css/materialize.js"></script>
     <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="js/modernizr.custom.js"></script>
   	
-	<title>Volunteer Page | Prospective</title>
+	<title>Volunteer Page | Offical</title>
 </head>
 <body>
 	<header class="cd-main-header">
@@ -27,14 +28,14 @@
 				<li class="has-children account">
 					<a href="#0">
 						<img src="img/cd-avatar.png" alt="avatar">
-						Account
+						Jane Doe
 					</a>
 
 					<ul>
 
 						<li><a href="#0">My Account</a></li>
 						<li><a href="#0">Edit Account</a></li>
-						<li><a href="#0">Logout</a></li>
+						<li><a href="../index.html">Logout</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -72,40 +73,97 @@
 			</ul>
 
 			<ul>
-				<li class="action-btn"><a href="#0">+ Submit Log</a></li>
+				<li class="action-btn cd-popup-trigger"><a href="#0">+ Submit Log</a></li>
 			</ul>
+
+            <div class="cd-popup" role="alert">
+                <div class="cd-popup-container">
+                    <p>Are you sure you want to delete this element?</p>
+                    <ul class="cd-buttons">
+                        <li><a href="#0">Yes</a></li>
+                        <li><a href="#0">No</a></li>
+                    </ul>
+                    <a href="#0" class="cd-popup-close img-replace">Close</a>
+                </div> <!-- cd-popup-container -->
+            </div> <!-- cd-popup -->
 		</nav>
 
 		<div class="content-wrapper">
+
             <div class="row">
-                <div class="col s6 m6">
-                    <div class="card blue-grey darken-1">
+                <div class="col s12">
+                    <div class="card deep-orange lighten-2">
                         <div class="card-content white-text">
-                            <span class="card-title">Card Title</span>
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</p>
+                            <p>Welcome back <b>Jane Doe</b>! You have been linked with <b>Carl
+                                 Fredrickson</b>. Please contact him at <b>(123) 456-7890</b>
+                            within the next week.</p>
                         </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                            <a href="#">This is a link</a>
+                        <div class="card-action cl-effect-1">
+                            <a href="#0">Submit a New Log</a>
                         </div>
                     </div>
                 </div>
-                <div class="col s6 m6">
-                    <div class="card blue-grey darken-1">
-                        <div class="card-content white-text">
-                            <span class="card-title">Card Title</span>
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div>
+
+                <div class="col s12">
+                    <table class="bordered highlight truncate valign-wrapper center-align">
+                        <thead>
+                        <tr>
+                            <th data-field="id">Date</th>
+                            <th data-field="name">Duration</th>
+                            <th data-field="price">Elder Name</th>
+                            <th data-field="price">Comments</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>03/16/16</td>
+                            <td>1.75 hours</td>
+                            <td>Carl Fredrickson</td>
+                            <td>Mr. Fredrickson and I have planned our first meeting. We've been
+                            discussing how we both enjoy Legos and how it never fails to brighten
+                            our day when we see a cool piece or creation.</td>
+                        </tr>
+                        <tr>
+                            <td>03/03/16</td>
+                            <td>2.5 hours</td>
+                            <td>Carl Fredrickson</td>
+                            <td>Today Mr. Fredrickson and I spoke for the longest time. We shared
+                            stories about our family. He's lived a long and full life. It's incredibly
+                            amusing. Unfortunately, times have been tough for him lately.</td>
+                        </tr>
+                        <tr>
+                            <td>02/25/16</td>
+                            <td>1.0 hours</td>
+                            <td>Carl Fredrickson</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>02/18/16</td>
+                            <td>1.75 hours</td>
+                            <td>Carl Fredrickson</td>
+                            <td>Mr. Fredrickson is awesome!</td>
+                        </tr>
+                        <tr>
+                            <td>02/11/16</td>
+                            <td>0.5 hours</td>
+                            <td>Carl Fredrickson</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>02/04/16</td>
+                            <td>0.5 hours</td>
+                            <td>Carl Fredrickson</td>
+                            <td>Today was the first time I spoke to Carl Fredrickson.
+                                It was a bit awkward at first, but after the introductions, we found out
+                                that we have quite a few things in common!</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-		</div> <!-- .content-wrapper -->
+
+        </div> <!-- .content-wrapper -->
 	</main> <!-- .cd-main-content -->
 <script src="js/jquery-2.1.4.js"></script>
 <script src="js/jquery.menu-aim.js"></script>

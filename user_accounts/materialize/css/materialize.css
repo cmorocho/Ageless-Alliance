@@ -2573,9 +2573,8 @@ optgroup {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-    /*background-color: #2c3136;*/
     font-size: 1.4rem;
-    color: #F0F5F7;
+    color: #2c3136;
 }
 
 td,
@@ -2956,7 +2955,7 @@ table.highlight > tbody > tr {
 }
 
 table.highlight > tbody > tr:hover {
-  background-color: #4ba8c9;
+  background-color: #CAE4ED;
 }
 
 table.centered thead tr th, table.centered tbody tr td {
@@ -2973,6 +2972,7 @@ td, th {
   text-align: left;
   vertical-align: middle;
   border-radius: 2px;
+    font-size: 1.2rem;
 }
 
 @media only screen and (max-width: 992px) {
@@ -6704,7 +6704,7 @@ span.badge.new:after {
 .row .col {
   float: left;
   box-sizing: border-box;
-  padding: 0 0.75rem;
+  padding: 20px 0.75rem;
 }
 
 .row .col[class*="push-"], .row .col[class*="pull-"] {
