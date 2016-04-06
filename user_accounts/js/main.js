@@ -229,7 +229,7 @@ jQuery(document).ready(function(){
 	function updateCategoryPosition() {
 		var top = $('.cd-articles').offset().top,
 			height = jQuery('.cd-articles').height() - jQuery('.cd-articles-categories').height(),
-			margin = 20;
+			margin = 85;
 		if( top - margin <= $(window).scrollTop() && top - margin + height > $(window).scrollTop() ) {
 			var leftValue = articlessCategoriesContainer.offset().left,
 				widthValue = articlessCategoriesContainer.width();

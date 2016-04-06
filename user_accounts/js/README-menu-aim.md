@@ -77,7 +77,7 @@ Check out example/example.html -- it has [a working dropdown for you to play wit
 ![Example screenshot](https://raw.github.com/kamens/jQuery-menu-aim/master/example.png)<br>
 _Play with the above example full of fun monkey pictures by opening example/example.html after downloading the repo._
 
-## FAQ
+## articles
 
 1. What's the license? [MIT](http://en.wikipedia.org/wiki/MIT_License).
 2. Does it support horizontal menus or submenus that open to the left? Yup. Check out the submenuDirection option above.

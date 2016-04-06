@@ -58,14 +58,14 @@
 					</ul>
 				</li>
 				<li class="has-children log-history">
-					<a href="#0">View Log History</a>
+					<a href="log-history.html">View Log History</a>
 				</li>
 			</ul>
 
 			<ul>
 				<li class="cd-label">Support</li>
 				<li class="has-children support">
-					<a href="../contact/contact.html">Contact</a>
+					<a href="contact.html">Contact</a>
 				</li>
 				<li class="has-children articles">
 					<a href="articles.html">Articles</a>
@@ -79,59 +79,52 @@
             <div class="cd-popup" role="alert">
                         <div class="cd-popup-container">
                             <h3>New Log Entry</h3>
-                            <p>Please input the information regarding your most recent link interaction.</p>
+                            <p style="padding-bottom: 0px">Please input the information regarding your most recent link interaction.</p>
                             <div class="row">
-                                <form class="col s12">
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <input id="link_date" type="date" class="datepicker">
-                                            <label for="link_date">Date of Link Interaction</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="elder_name" type="text" class="validate">
-                                            <label for="elder_name">Elder Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <select id="duration" class="browser-default">
-                                                <option value="" disabled selected>Choose your option</option>
-                                                <option value="1">0.25 hours</option>
-                                                <option value="2">0.50 hours</option>
-                                                <option value="3">0.75 hours</option>
-                                                <option value="1">1 hour</option>
-                                                <option value="1">1.25 hours</option>
-                                                <option value="2">1.50 hours</option>
-                                                <option value="3">1.75 hours</option>
-                                                <option value="1">2 hours</option>
-                                                <option value="1">2.25 hours</option>
-                                                <option value="2">2.50 hours</option>
-                                                <option value="3">2.75 hours</option>
-                                                <option value="1">3 hours or more</option>
-                                            </select>
-                                            <label for="duration">Duration</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <form class="col s12">
-                                            <div class="row">
-                                                <div class="input-field col s12">
-                                                    <textarea id="log_comments" class="materialize-textarea" placeholder="Optional"></textarea>
-                                                    <label for="log_comments">Comments</label>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-
+                                <div class="col s5 input-special input--chisato" style="padding-bottom: 0px; padding-left: 15px">
+                                    <input class="input__field input__field--chisato" type="text" id="link-date" />
+                                    <label class="input__label input__label--chisato" for="link-date">
+                                        <div class="input__label-content input__label-content--chisato" data-content="Date of Link Interaction">Date of Link Interaction</div>
+                                    </label>
+                                </div>
+                                <div class="col s6 input-special input--chisato" style="padding-bottom: 0px">
+                                    <input class="input__field input__field--chisato" type="text" id="elder-name" />
+                                    <label class="input__label input__label--chisato" for="elder-name">
+                                        <span class="input__label-content input__label-content--chisato" data-content="Elder Name">Elder Name</span>
+                                    </label>
+                                </div>
+                                <div class="input-field col s12" style="padding-bottom: 0px">
+                                    <select id="duration" class="browser-default">
+                                        <option value="" disabled selected>Choose your option</option>
+                                        <option value="1">0.25 hours</option>
+                                        <option value="2">0.50 hours</option>
+                                        <option value="3">0.75 hours</option>
+                                        <option value="1">1 hour</option>
+                                        <option value="1">1.25 hours</option>
+                                        <option value="2">1.50 hours</option>
+                                        <option value="3">1.75 hours</option>
+                                        <option value="1">2 hours</option>
+                                        <option value="1">2.25 hours</option>
+                                        <option value="2">2.50 hours</option>
+                                        <option value="3">2.75 hours</option>
+                                        <option value="1">3 hours or more</option>
+                                    </select>
+                                    <label for="duration">Duration</label>
+                                </div>
+                                <form  class="col s12 input-special input--chisato">
+                                        <textarea id="log-comments" class="materialize-textarea input__field input__field--chisato"></textarea>
+                                        <label class="input__label input__label--chisato" for="log-comments">
+                                            <div class="input__label-content input__label-content--chisato" data-content="Comments">Comments</div>
+                                        </label>
                                 </form>
-                            </div>
+                            </div> <!-- row -->
 
                             <ul class="cd-buttons">
                                 <li><a href="#0">Submit</a></li>
-                                <li><a href="#0">Cancel</a></li>
+                                <li><a href="#0" class="cd-popup-close">Cancel</a></li>
                             </ul>
-                            <!--<a href="#0" class="cd-popup-close img-replace"></a>-->
-                         </div> <!-- cd-popup-container -->
+                        <!--<a href="#0" class="cd-popup-close img-replace"></a>-->
+                     </div> <!-- cd-popup-container -->
             </div> <!-- cd-popup -->
 		</nav>
 
@@ -158,62 +151,123 @@
                             <th data-field="id">Date</th>
                             <th data-field="name">Duration</th>
                             <th data-field="price">Elder Name</th>
-                            <th data-field="price">Comments</th>
+                            <th data-field="number">Phone Number</th>
+                            <th data-field="comments">Comments</th>
                         </tr>
                         </thead>
 
                         <tbody>
                         <tr>
+                            <td>04/06/16</td>
+                            <td>1.75 hours</td>
+                            <td>Carl Fredrickson</td>
+                            <td>(123) 456-7890</td>
+                            <td>Mr. Fredrickson and I have planned our first meeting. We've been
+                                discussing how we both enjoy Legos and how it never fails to brighten
+                                our day when we see a cool piece or creation.</td>
+                        </tr>
+                        <tr>
+                            <td>03/28/16</td>
+                            <td>1.75 hours</td>
+                            <td>Carl Fredrickson</td>
+                            <td>(123) 456-7890</td>
+                            <td>Today Mr. Fredrickson and I spoke for the longest time. We shared
+                                stories about our family. He's lived a long and full life. It's incredibly
+                                amusing. Unfortunately, times have been tough for him lately.</td>
+                        </tr>
+                        <tr>
                             <td>03/16/16</td>
                             <td>1.75 hours</td>
                             <td>Carl Fredrickson</td>
-                            <td>Mr. Fredrickson and I have planned our first meeting. We've been
-                            discussing how we both enjoy Legos and how it never fails to brighten
-                            our day when we see a cool piece or creation.</td>
+                            <td>(123) 456-7890</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>03/03/16</td>
                             <td>2.5 hours</td>
                             <td>Carl Fredrickson</td>
-                            <td>Today Mr. Fredrickson and I spoke for the longest time. We shared
-                            stories about our family. He's lived a long and full life. It's incredibly
-                            amusing. Unfortunately, times have been tough for him lately.</td>
+                            <td>(123) 456-7890</td>
+                            <td>Mr. Fredrickson is awesome!</td>
                         </tr>
                         <tr>
                             <td>02/25/16</td>
                             <td>1.0 hours</td>
                             <td>Carl Fredrickson</td>
+                            <td>(123) 456-7890</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>02/18/16</td>
                             <td>1.75 hours</td>
                             <td>Carl Fredrickson</td>
-                            <td>Mr. Fredrickson is awesome!</td>
+                            <td>(123) 456-7890</td>
+                            <td>Today was the first time I spoke to Carl Fredrickson.
+                                It was a bit awkward at first, but after the introductions, we found out
+                                that we have quite a few things in common!</td>
                         </tr>
                         <tr>
                             <td>02/11/16</td>
                             <td>0.5 hours</td>
                             <td>Carl Fredrickson</td>
-                            <td> </td>
+                            <td>(123) 456-7890</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>
                         </tr>
                         <tr>
                             <td>02/04/16</td>
                             <td>0.5 hours</td>
                             <td>Carl Fredrickson</td>
-                            <td>Today was the first time I spoke to Carl Fredrickson.
-                                It was a bit awkward at first, but after the introductions, we found out
-                                that we have quite a few things in common!</td>
+                            <td>(123) 456-7890</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="col s12">
+                    <div class="cl-effect-2 right-align">
+                        <a href="log-history.html" style="color: #fff"><span class="center-align" data-hover="View More">View More</span></a>
+                    </div>
                 </div>
             </div>
 
         </div> <!-- .content-wrapper -->
 	</main> <!-- .cd-main-content -->
-<script src="js/jquery-2.1.4.js"></script>
-<script src="js/jquery.menu-aim.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/jquery.menu-aim.js"></script>
+    <script src="js/main.js"></script> <!-- Resource jQuery -->
+    <script>
+        (function() {
+            // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+            if (!String.prototype.trim) {
+                (function() {
+                    // Make sure we trim BOM and NBSP
+                    var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                    String.prototype.trim = function() {
+                        return this.replace(rtrim, '');
+                    };
+                })();
+            }
+
+            [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+                // in case the input is already filled..
+                if( inputEl.value.trim() !== '' ) {
+                    classie.add( inputEl.parentNode, 'input--filled' );
+                }
+
+                // events:
+                inputEl.addEventListener( 'focus', onInputFocus );
+                inputEl.addEventListener( 'blur', onInputBlur );
+            } );
+
+            function onInputFocus( ev ) {
+                classie.add( ev.target.parentNode, 'input--filled' );
+            }
+
+            function onInputBlur( ev ) {
+                if( ev.target.value.trim() === '' ) {
+                    classie.remove( ev.target.parentNode, 'input--filled' );
+                }
+            }
+        })();
+    </script>
 </body>
 </html>
