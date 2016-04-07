@@ -36,6 +36,19 @@ img { max-width: 100%; }
 ::-moz-selection { background: #de995e; color: #fff; text-shadow: none; }
 ::selection { background: #de995e; color: #fff; text-shadow: none; }
 
+.navbar {
+	padding-top: 10px;
+	border: 0;
+}
+
+.navbar-brand {
+	width: 156px;
+	background: url(../img/al-logo2.png) left center no-repeat;
+	text-indent: -99999px;
+}
+
+.navbar.navbar-no-bg { background: none; }
+
 
 .btn-link-1 {
 	display: inline-block;

@@ -265,9 +265,8 @@
                 // increase (somewhat counterintuitively).
                 function slope(a, b) {
                     return (b.y - a.y) / (b.x - a.x);
-                };
-
-                var decreasingCorner = upperRight,
+                }
+            var decreasingCorner = upperRight,
                     increasingCorner = lowerRight;
 
                 // Our expectations for decreasing or increasing slope values
@@ -318,6 +317,6 @@
 
         $(document).mousemove(mousemoveDocument);
 
-    };
+    }
 })(jQuery);
 
