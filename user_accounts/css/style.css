@@ -885,11 +885,12 @@ xpopup
     -o-transform: translateY(0);
     transform: translateY(0);
 }
-/*@media only screen and (min-width: 1170px) {*/
-    /*.cd-popup-container {*/
-        /*margin: 8em auto;*/
-    /*}*/
-/*}*/
+@media only screen and (min-width: 1024px) {
+    .cd-popup-container {
+        margin: 8em auto;
+        z-index: 2;
+    }
+}
 
 /* --------------------------------
 
@@ -983,7 +984,7 @@ Articles
     top: 0;
     left: 0;
     width: 205px;
-    z-index: 0;
+    z-index: 1;
   }
   .cd-articles-categories a::before {
     /* decorative rectangle on the left visible for the selected item */
