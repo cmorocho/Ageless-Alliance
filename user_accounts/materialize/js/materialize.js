@@ -5984,9 +5984,7 @@ DatePicker.prototype.navigate = function( type, value, options ) {
 
     return value
 };; //DatePicker.prototype.navigate
-
-
-/**
+    /**
  * Normalize a date by setting the hours to midnight.
  */
 DatePicker.prototype.normalize = function( value/*, options*/ ) {
@@ -6150,9 +6148,7 @@ DatePicker.prototype.validate = function( type, dateObject, options ) {
     // Return the date object settled on.
     return dateObject
 };; //DatePicker.prototype.validate
-
-
-/**
+    /**
  * Check if a date is disabled.
  */
 DatePicker.prototype.disabled = function( dateToVerify ) {

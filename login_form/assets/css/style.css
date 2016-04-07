@@ -42,8 +42,9 @@ img { max-width: 100%; }
 }
 
 .navbar-brand {
-	width: 156px;
-	background: url(../img/al-logo2.png) left center no-repeat;
+	width: 300px; /*156px;*/
+	height: 55px;
+	background: url(../img/ageless-link-logo-horizontal-small.png) left center no-repeat;
 	text-indent: -99999px;
 }
 
