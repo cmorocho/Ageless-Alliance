@@ -808,8 +808,7 @@ footer {
       border-radius: 3px;
       font-size: 22px;
       display: inline-block;
-      text-align: center;
-      margin-right: 20px; }
+      text-align: center; }
     footer .social-share a.twitter-share:hover, footer .social-share a.twitter-share:focus {
       background-color: #1590BF; }
     footer .social-share a.facebook-share:hover, footer .social-share a.facebook-share:focus {
@@ -822,6 +821,37 @@ footer {
       font-size: 22px;
       display: inline-block;
       text-align: center; }
+    footer .social-share a.instagram-share {
+      height: 60px;
+      width: 60px;
+      background-color: #ded1c1;
+      border-radius: 3px;
+      font-size: 22px;
+      display: inline-block;
+      text-align: center;}
+    footer .social-share a.instagram-share:hover, footer .social-share a.twitter-share:focus {
+      background-color: #9b6954; }
+    footer .social-share a.pinterest-share {
+      height: 60px;
+      width: 60px;
+      background-color: #C92228;
+      border-radius: 3px;
+      font-size: 22px;
+      display: inline-block;
+      text-align: center;}
+    footer .social-share a.pinterest-share:hover, footer .social-share a.twitter-share:focus {
+      background-color: #90181d; }
+    footer .social-share a.youtube-share {
+      height: 60px;
+      width: 60px;
+      background-color: #bb0000;
+      border-radius: 3px;
+      font-size: 22px;
+      display: inline-block;
+      text-align: center;}
+    footer .social-share a.youtube-share:hover, footer .social-share a.twitter-share:focus {
+      background-color: #510000; }
+
     footer .social-share a {
       color: #fff; }
     footer .social-share a:hover {

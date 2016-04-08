@@ -811,7 +811,6 @@ footer {
       font-size: 22px;
       display: inline-block;
       text-align: center;
-      margin-right: 20px;
     }
     a.twitter-share:hover, a.twitter-share:focus {
       background-color: #1590BF;
@@ -827,6 +826,18 @@ footer {
       font-size: 22px;
       display: inline-block;
       text-align: center;
+    }
+    a.instagram-share {
+      height: 60px;
+      width: 60px;
+      background-color: #ded1c1;
+      border-radius: 3px;
+      font-size: 22px;
+      display: inline-block;
+      text-align: center;
+    }
+    a.instagram-share:hover, a.twitter-share:focus {
+      background-color: #9b6954;
     }
     a {
       color: $txt-light;
