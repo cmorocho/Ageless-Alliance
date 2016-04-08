@@ -35,7 +35,7 @@ h3 {
   font-family: "Wask New";
   font-weight: bold;
   margin-bottom: 20px;
-  color: #232731; }
+  color: #3f3f3f; }
 
 h4 {
   font-size: 18px;
@@ -48,7 +48,7 @@ h5 {
   font-weight: 500; }
 
 .btn {
-  font-size: 13px;
+  font-size: 16px;
   border: solid 2px;
   /*border-radius: 40px;*/
   display: inline-block;
@@ -60,7 +60,7 @@ h5 {
   background-color: #3f3f3f; }
 
 .btn-white {
-  font-size: 13px;
+  font-size: 16px;
   border: solid 2px;
   /*border-radius: 40px;*/
   display: inline-block;
@@ -80,8 +80,8 @@ h5 {
 
 .btn-fill:hover, .btn-fill:focus {
   color: #fff;
-  background-color: #FF771B;
-  border-color: #FF771B; }
+  background-color: #3f3f3f;
+  border-color: #3f3f3f; }
 
 .btn-accent {
   color: #fff;
@@ -93,8 +93,21 @@ h5 {
 
 .btn-accent:hover, .btn-fill:focus {
   color: #fff;
-  background-color: #FF771B;
-  border-color: #FF771B; }
+  background-color: #ff8a65;
+  border-color: #ff8a65; }
+
+.btn-accent-other {
+  color: #fff;
+  border: solid 2px #ff7e66;
+  /*border-radius: 40px;*/
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: #ff7e66; }
+
+.btn-accent-other:hover, .btn-fill:focus {
+  color: #fff;
+  background-color: #3f3f3f;
+  border-color: #3f3f3f; }
 
 .btn-small {
   padding: 8px 40px; }
@@ -106,10 +119,11 @@ h5 {
   margin-right: 20px; }
 
 section.intro, section.background, section.sign-up {
-  background: #fff; }
+  background: #F0F5F7; }
 
 section.background, section.blog-intro, section.blog {
-  background: #F3F4F8; }
+  background: #ffffff; }
+
 
 /* ==========================================================================
 Global Styles
@@ -136,7 +150,7 @@ a {
   transition-property: color, border-color, background-color; }
 
 a:hover, a:focus {
-  color: #FF771B;
+  color: #ff8a65;
   text-decoration: none; }
 
 body {
@@ -383,12 +397,12 @@ Hero
   background-size: cover;
   position: relative; }
   .hero .down-arrow a {
-    color: #fff; }
+    color: #F0F5F7; }
   .hero h1 {
-    color: #fff;
+    color: #F0F5F7;
     margin-bottom: 40px; }
   .hero p.intro {
-    color: #fff;
+    color: #F0F5F7;
     font-size: 20px;
     font-weight: 300;
     margin-bottom: 80px; }
@@ -419,7 +433,7 @@ header {
   header a {
     color: #fff;
     text-transform: uppercase;
-    font-size: 13px; }
+    font-size: 16px; }
     header a.link {
       margin-right: 20px; }
   header .logo {
@@ -439,7 +453,7 @@ header {
   header ul.member-actions li {
     display: inline; }
     header ul.member-actions li a {
-      color: #fff; }
+      color: #F0F5F7; }
       header ul.member-actions li.link a:hover {
         color: #3f3f3f; }
   header .header-nav {
@@ -447,7 +461,7 @@ header {
   header .member-actions {
     position: absolute;
     right: 0;
-    top: 41px;
+    top: 50px;
     -webkit-transition: all 300ms ease-in-out;
             transition: all 300ms ease-in-out; }
 
@@ -466,7 +480,7 @@ Intro
 ========================================================================== */
 .intro span.icon {
   font-size: 40px;
-  color: #FF771B;
+  color: #ff8a65;
   font-weight: bold; }
 
 .intro-icon {
@@ -490,7 +504,7 @@ Intro
     margin-top: 20px; }
 .background span.icon {
     font-size: 35px;
-    color: #FF771B;
+    color: #ff8a65;
     font-weight: bold; }
 .background .fact-icon {
     display: inline-block;
@@ -523,7 +537,7 @@ Intro
 ========================================================================== */
 .hero-strip {
   margin-top: 0px;
-  background: #333844 url("../img/polygonal-bg.jpg") no-repeat center center;
+  background: url("../img/polygonal-bg.png") no-repeat center center;
   padding-bottom: 190px;
   position: relative; }
   .hero-strip i {
@@ -538,7 +552,7 @@ Intro
     color: #fff;
     margin: 0 0 20px 0; }
   .hero-strip p {
-    color: #ACB1B4; }
+    color: #ffffff; }
   .hero-strip .btn {
     margin-top: 10px; }
   .hero-strip .logo-placeholder {
@@ -624,7 +638,7 @@ Intro
 .testimonial-slider
 ========================================================================== */
 .testimonial-slider {
-  background: url("../img/testimonials-bg.jpg") no-repeat center center;
+  background: url("../img/testimonials-bg.png") no-repeat center center;
   background-size: cover; }
   .testimonial-slider .avatar {
     width: 82px;
@@ -645,7 +659,7 @@ Intro
     font-style: italic;
     margin: 30px 0; }
   .testimonial-slider p {
-    color: #ACB1B4;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px; }
 
@@ -656,7 +670,7 @@ Sign up form
   padding: 15px 0;
   border-radius: 3px;
   width: 80%;
-  font-size: 13px; }
+  font-size: 16px; }
 .sign-up .signup-form .form-input-group {
   width: 80%;
   height: 55px;
@@ -679,6 +693,14 @@ Sign up form
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%); }
+.sign-up .signup-form .form-input-group i.fa-user {
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-left: 20px; }
   .sign-up .signup-form .form-input-group i.fa-lock {
     font-size: 18px;
     position: absolute;
@@ -715,7 +737,7 @@ To top
 ========================================================================== */
 .to-top {
   height: 60px;
-  background-color: #495061; }
+  background-color: #ff8a65; }
   .to-top .to-top-wrap {
     height: 60px;
     width: 70px;
@@ -744,7 +766,7 @@ footer {
   position: relative; }
   footer p {
     color: #ACB1B4;
-    font-size: 13px; }
+    font-size: 16px; }
   footer a {
     color: #fff; }
   footer a:hover {
@@ -756,7 +778,7 @@ footer {
   footer ul.footer-group li {
     display: inline-block; }
   footer ul.footer-group li a {
-    font-size: 13px;
+    font-size: 16px;
     text-transform: uppercase; }
   footer ul.footer-group li a:hover {
     color: #4ba8c9; }
@@ -786,8 +808,7 @@ footer {
       border-radius: 3px;
       font-size: 22px;
       display: inline-block;
-      text-align: center;
-      margin-right: 20px; }
+      text-align: center; }
     footer .social-share a.twitter-share:hover, footer .social-share a.twitter-share:focus {
       background-color: #1590BF; }
     footer .social-share a.facebook-share:hover, footer .social-share a.facebook-share:focus {
@@ -800,6 +821,37 @@ footer {
       font-size: 22px;
       display: inline-block;
       text-align: center; }
+    footer .social-share a.instagram-share {
+      height: 60px;
+      width: 60px;
+      background-color: #ded1c1;
+      border-radius: 3px;
+      font-size: 22px;
+      display: inline-block;
+      text-align: center;}
+    footer .social-share a.instagram-share:hover, footer .social-share a.twitter-share:focus {
+      background-color: #9b6954; }
+    footer .social-share a.pinterest-share {
+      height: 60px;
+      width: 60px;
+      background-color: #C92228;
+      border-radius: 3px;
+      font-size: 22px;
+      display: inline-block;
+      text-align: center;}
+    footer .social-share a.pinterest-share:hover, footer .social-share a.twitter-share:focus {
+      background-color: #90181d; }
+    footer .social-share a.youtube-share {
+      height: 60px;
+      width: 60px;
+      background-color: #bb0000;
+      border-radius: 3px;
+      font-size: 22px;
+      display: inline-block;
+      text-align: center;}
+    footer .social-share a.youtube-share:hover, footer .social-share a.twitter-share:focus {
+      background-color: #510000; }
+
     footer .social-share a {
       color: #fff; }
     footer .social-share a:hover {

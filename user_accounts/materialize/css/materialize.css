@@ -2964,6 +2964,8 @@ table.centered thead tr th, table.centered tbody tr td {
 
 thead {
   border-bottom: 1px solid #d0d0d0;
+  background-color: #ff7e66;
+  color: #FFFFFF;
 }
 
 td, th {
@@ -8580,7 +8582,7 @@ a.waves-effect .waves-ripple {
 .chip {
   display: inline-block;
   height: 32px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.6);
   line-height: 32px;
@@ -9311,7 +9313,7 @@ form p:last-child {
   top: 0;
   left: 1px;
   width: 8px;
-  height: 13px;
+  height: 16px;
   border-top: 2px solid transparent;
   border-left: 2px solid transparent;
   border-right: 2px solid #fff;

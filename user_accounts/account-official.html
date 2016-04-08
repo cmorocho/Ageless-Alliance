@@ -6,6 +6,9 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
 
+    <link rel="icon" type="image/png" href="../favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../favicon-16x16.png" sizes="16x16" />
+
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
     <!--<link rel="stylesheet" href="materialize/css/materialize.min.css"> &lt;!&ndash;MaterializeCSS&ndash;&gt;-->
@@ -24,7 +27,7 @@
                 <a href="../index.html" class="cd-logo"><img src="img/cd-logo.svg" alt="Logo"></a>
             </div>
             <div class="col s7 center-align" style="padding: 0 0 0 0">
-                <img src="img/ageless-link-logo-horizontal-small.png">
+                <img src="../img/ageless-link-logo-horizontal-small.png">
             </div>
             <div class="col s2 right-align" style="padding: 0 0 0 0">
                 <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
@@ -75,9 +78,17 @@
 				<li class="has-children support">
 					<a href="contact.html">Contact</a>
 				</li>
-				<li class="has-children articles">
-					<a href="articles.html">Articles</a>
-				</li>
+                <li class="has-children articles">
+                    <a href="../user_accounts/articles.html">Articles</a>
+                    <ul>
+                        <li><a class="selected" href="../user_accounts/articles.html#basics">Basics</a></li>
+                        <li><a href="../user_accounts/articles.html#role">Role of Ageless Volunteer</a></li>
+                        <li><a href="../user_accounts/articles.html#policies-procedures">Policies & Procedures</a></li>
+                        <li><a href="../user_accounts/articles.html#ethics">Ethics</a></li>
+                        <li><a href="../user_accounts/articles.html#safety">Safety</a></li>
+                        <li><a href="../user_accounts/articles.html#miscellaneous">Miscellaneous</a></li>
+                    </ul>
+                </li>
 			</ul>
 
 			<ul>
@@ -122,7 +133,7 @@
                                 <form  class="col s12 input-special input--chisato">
                                         <textarea id="log-comments" class="materialize-textarea input__field input__field--chisato"></textarea>
                                         <label class="input__label input__label--chisato" for="log-comments">
-                                            <div class="input__label-content input__label-content--chisato" data-content="Comments">Comments</div>
+                                            <div class="input__label-content input__label-content--chisato" data-content="Comments">Comments (Optional)</div>
                                         </label>
                                 </form>
                             </div> <!-- row -->

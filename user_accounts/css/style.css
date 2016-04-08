@@ -549,7 +549,8 @@ Sidebar
   position: relative;
   width: 100%;
   display: none;
-  background-color: #1c1f22;
+  background-color: #33383e;
+  border-bottom: 1px solid #555b61;
 }
 .has-children > a::after {
   /* arrow icon */
@@ -593,6 +594,7 @@ Sidebar
     text-align: left;
     border: none;
     padding: 1em;
+    border-bottom: 1px solid #555b61;
   }
   .no-touch .has-children ul a:hover {
     color: #4ba8c9;
@@ -1187,6 +1189,7 @@ Articles
 }
 
 .cd-articles-trigger {
+  color: #428CA6;
   position: relative;
   display: block;
   margin: 1.6em 0 .4em;
@@ -1547,3 +1550,18 @@ Form Effects:
 .input__label-content--minoru {
   padding: 0.75em 0.15em;
 }
+
+/* --------------------------------
+
+JExpand: table expand
+
+-------------------------------- */
+.table-expand { border-collapse:collapse;}
+.table-expand h4 { margin:0px; padding:0px;}
+.table-expand img { float:right;}
+.table-expand ul { margin:10px 0 10px 40px; padding:0px;}
+/*.table-expand th { background:#7CB8E2 url(header_bkg.png) repeat-x scroll center left; color:#fff; padding:7px 15px; text-align:left;}*/
+.table-expand td { color:#000; padding:7px 15px; }
+/*.table-expand tr.odd td {  cursor:pointer; }*/
+.table-expand div.arrow { background:transparent url("../img/arrows.png") no-repeat scroll 0px -16px; width:16px; height:16px; display:block;}
+.table-expand div.up { background-position:0px 0px;}

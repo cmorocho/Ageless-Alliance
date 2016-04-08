@@ -591,13 +591,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/testimonials-bg.jpg": {
+	"\/img\/testimonials-bg.png": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 261624,
-		"inputAbbreviatedPath": "\/img\/testimonials-bg.jpg",
-		"outputAbbreviatedPath": "\/img\/testimonials-bg.jpg",
+		"inputAbbreviatedPath": "\/img\/testimonials-bg.png",
+		"outputAbbreviatedPath": "\/img\/testimonials-bg.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
