@@ -148,46 +148,46 @@ jQuery(document).ready(function(){
 		}
 	});
 
-	// articles stuff
+	// handbook stuff
 	//update these values if you change these breakpoints in the style.css file (or _layout.scss if you use SASS)
 	var MqM= 768,
 		MqL = 1024;
 
-	var articlessSections = $('.cd-articles-group'),
-		articlesTrigger = $('.cd-articles-trigger'),
-		articlessContainer = $('.cd-articles-items'),
-		articlessCategoriesContainer = $('.cd-articles-categories'),
-		articlessCategories = articlessCategoriesContainer.find('a'),
-		closearticlessContainer = $('.cd-close-panel');
+	var handbooksSections = $('.cd-handbook-group'),
+		handbookTrigger = $('.cd-handbook-trigger'),
+		handbooksContainer = $('.cd-handbook-items'),
+		handbooksCategoriesContainer = $('.cd-handbook-categories'),
+		handbooksCategories = handbooksCategoriesContainer.find('a'),
+		closehandbooksContainer = $('.cd-close-panel');
 
-	//select a articles section
-	articlessCategories.on('click', function(event){
+	//select a handbook section
+	handbooksCategories.on('click', function(event){
 		event.preventDefault();
 		var selectedHref = $(this).attr('href'),
 			target= $(selectedHref);
 		if( $(window).width() < MqM) {
-			articlessContainer.scrollTop(0).addClass('slide-in').children('ul').removeClass('selected').end().children(selectedHref).addClass('selected');
-			closearticlessContainer.addClass('move-left');
+			handbooksContainer.scrollTop(0).addClass('slide-in').children('ul').removeClass('selected').end().children(selectedHref).addClass('selected');
+			closehandbooksContainer.addClass('move-left');
 			$('body').addClass('cd-overlay');
 		} else {
 			$('body,html').animate({ 'scrollTop': target.offset().top - 19}, 200);
 		}
 	});
 
-	//close articles lateral panel - mobile only
+	//close handbook lateral panel - mobile only
 	$('body').bind('click touchstart', function(event){
 		if( $(event.target).is('body.cd-overlay') || $(event.target).is('.cd-close-panel')) {
 			closePanel(event);
 		}
 	});
-	articlessContainer.on('swiperight', function(event){
+	handbooksContainer.on('swiperight', function(event){
 		closePanel(event);
 	});
 
-	//show articles content clicking on articlesTrigger
-	articlesTrigger.on('click', function(event){
+	//show handbook content clicking on handbookTrigger
+	handbookTrigger.on('click', function(event){
 		event.preventDefault();
-		$(this).next('.cd-articles-content').slideToggle(200).end().parent('li').toggleClass('content-visible');
+		$(this).next('.cd-handbook-content').slideToggle(200).end().parent('li').toggleClass('content-visible');
 	});
 
 	//update category sidebar while scrolling
@@ -199,7 +199,7 @@ jQuery(document).ready(function(){
 
 	$(window).on('resize', function(){
 		if($(window).width() <= MqL) {
-			articlessCategoriesContainer.removeClass('is-fixed').css({
+			handbooksCategoriesContainer.removeClass('is-fixed').css({
 				'-moz-transform': 'translateY(0)',
 				'-webkit-transform': 'translateY(0)',
 				'-ms-transform': 'translateY(0)',
@@ -207,17 +207,17 @@ jQuery(document).ready(function(){
 				'transform': 'translateY(0)',
 			});
 		}
-		if( articlessCategoriesContainer.hasClass('is-fixed') ) {
-			articlessCategoriesContainer.css({
-				'left': articlessContainer.offset().left,
+		if( handbooksCategoriesContainer.hasClass('is-fixed') ) {
+			handbooksCategoriesContainer.css({
+				'left': handbooksContainer.offset().left,
 			});
 		}
 	});
 
 	function closePanel(e) {
 		e.preventDefault();
-		articlessContainer.removeClass('slide-in').find('li').show();
-		closearticlessContainer.removeClass('move-left');
+		handbooksContainer.removeClass('slide-in').find('li').show();
+		closehandbooksContainer.removeClass('move-left');
 		$('body').removeClass('cd-overlay');
 	}
 
@@ -227,13 +227,13 @@ jQuery(document).ready(function(){
 	}
 
 	function updateCategoryPosition() {
-		var top = $('.cd-articles').offset().top,
-			height = jQuery('.cd-articles').height() - jQuery('.cd-articles-categories').height(),
+		var top = $('.cd-handbook').offset().top,
+			height = jQuery('.cd-handbook').height() - jQuery('.cd-handbook-categories').height(),
 			margin = 85;
 		if( top - margin <= $(window).scrollTop() && top - margin + height > $(window).scrollTop() ) {
-			var leftValue = articlessCategoriesContainer.offset().left,
-				widthValue = articlessCategoriesContainer.width();
-			articlessCategoriesContainer.addClass('is-fixed').css({
+			var leftValue = handbooksCategoriesContainer.offset().left,
+				widthValue = handbooksCategoriesContainer.width();
+			handbooksCategoriesContainer.addClass('is-fixed').css({
 				'left': leftValue,
 				'top': margin,
 				'-moz-transform': 'translateZ(0)',
@@ -244,7 +244,7 @@ jQuery(document).ready(function(){
 			});
 		} else if( top - margin + height <= $(window).scrollTop()) {
 			var delta = top - margin + height - $(window).scrollTop();
-			articlessCategoriesContainer.css({
+			handbooksCategoriesContainer.css({
 				'-moz-transform': 'translateZ(0) translateY('+delta+'px)',
 				'-webkit-transform': 'translateZ(0) translateY('+delta+'px)',
 				'-ms-transform': 'translateZ(0) translateY('+delta+'px)',
@@ -252,7 +252,7 @@ jQuery(document).ready(function(){
 				'transform': 'translateZ(0) translateY('+delta+'px)',
 			});
 		} else {
-			articlessCategoriesContainer.removeClass('is-fixed').css({
+			handbooksCategoriesContainer.removeClass('is-fixed').css({
 				'left': 0,
 				'top': 0,
 			});
@@ -260,10 +260,10 @@ jQuery(document).ready(function(){
 	}
 
 	function updateSelectedCategory() {
-		articlessSections.each(function(){
+		handbooksSections.each(function(){
 			var actual = $(this),
-				margin = parseInt($('.cd-articles-title').eq(1).css('marginTop').replace('px', '')),
-				activeCategory = $('.cd-articles-categories a[href="#'+actual.attr('id')+'"]'),
+				margin = parseInt($('.cd-handbook-title').eq(1).css('marginTop').replace('px', '')),
+				activeCategory = $('.cd-handbook-categories a[href="#'+actual.attr('id')+'"]'),
 				topSection = (activeCategory.parent('li').is(':first-child')) ? 0 : Math.round(actual.offset().top);
 
 			if ( ( topSection - 20 <= $(window).scrollTop() ) && ( Math.round(actual.offset().top) + actual.height() + margin - 20 > $(window).scrollTop() ) ) {
@@ -273,4 +273,6 @@ jQuery(document).ready(function(){
 			}
 		});
 	}
+
+	// notification
 });
