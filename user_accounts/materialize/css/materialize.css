@@ -2418,7 +2418,7 @@ textarea {
   /* 1 */
   font: inherit;
   /* 2 */
-  margin-top: 1em;
+  /*margin-top: 1em;*/
   /* 3 */
 }
 

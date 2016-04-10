@@ -821,12 +821,12 @@ xpopup
     display: table;
     clear: both;
 }
-.cd-popup-container .cd-buttons li {
-    float: left;
-    width: 50%;
+.cd-popup-container .cd-buttons {
+    padding: 0 0 0 0
 }
-.cd-popup-container .cd-buttons a {
+.cd-popup-container .cd-buttons .submit {
     display: block;
+    width:100%;
     height: 90px;
     line-height: 60px;
     text-transform: uppercase;
@@ -834,20 +834,23 @@ xpopup
     -webkit-transition: background-color 0.2s;
     -moz-transition: background-color 0.2s;
     transition: background-color 0.2s;
-}
-.cd-popup-container .cd-buttons li:first-child a {
     background: #ff8a65;
+    border: 2px solid #ff8a65;
     border-radius: 0 0 0 .25em;
 }
-.no-touch .cd-popup-container .cd-buttons li:first-child a:hover {
-    background-color: #B1C5CC;
-}
-.cd-popup-container .cd-buttons li:last-child a {
-    background: #3e454c;
-    border-radius: 0 0 .25em 0;
-}
-.no-touch .cd-popup-container .cd-buttons li:last-child a:hover {
-    background-color: #AFB2B3;
+.cd-popup-container .cd-buttons .cancel {
+  display: block;
+  width:100%;
+  height: 90px;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #FFF;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  background: #3e454c;
+  border: 2px solid #3e454c;
+  border-radius: 0 0 .25em 0;
 }
 .cd-popup-container .cd-popup-close {
     /*position: absolute;*/
@@ -1279,7 +1282,7 @@ Form Effects:
   z-index: 1;
   display: inline-block;
   margin: 1em;
-  max-width: 350px;
+  /*max-width: 500px;*/
   width: calc(100% - 2em);
   vertical-align: top;
 }
@@ -1338,7 +1341,7 @@ Form Effects:
   padding: 0.8em 0.5em;
   background: transparent;
   border: 1px solid #4ba8c9;
-  color: #b5b5b5;
+  color: #000000;
   -webkit-transition: border-color 0.25s;
   transition: border-color 0.25s;
 }
@@ -1373,6 +1376,7 @@ Form Effects:
 .input__field--chisato:focus,
 .input--filled .input__field--chisato {
   border-color: #ff8a65;
+  padding-left:1em;
 }
 
 .input__field--chisato:focus + .input__label--chisato,
