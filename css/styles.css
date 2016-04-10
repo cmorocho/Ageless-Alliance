@@ -525,12 +525,12 @@ Intro
     width: 80%; }
   .background .macbook-wrap {
     position: absolute;
-    width: 916px;
+    width: 930px;
     height: 540px;
-    background: url("../img/macbook-pro.png") no-repeat center center;
+    background: url("../img/groupshot.JPG") no-repeat center center;
     top: 114px;
     z-index: 4;
-    left: 50%; }
+    left: 40%; }
 
 /* ==========================================================================
 .hero-strip
