@@ -790,6 +790,10 @@ footer {
     color: #ff415c;
     font-size: 15px;
     margin: 0 2px; }
+  footer span.fa-code {
+  color: #ff7e66;
+  font-size: 15px;
+  margin: 0 2px; }
   footer .social-share {
     position: absolute;
     background-color: #373D4A;
