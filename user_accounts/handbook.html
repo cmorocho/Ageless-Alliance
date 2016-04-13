@@ -85,66 +85,6 @@
 			<li class="action-btn cd-popup-trigger"><a href="#0">+ Log Entry</a></li>
 		</ul>
 
-		<div class="cd-popup" role="alert">
-			<div class="cd-popup-container">
-				<h3>New Log Entry</h3>
-				<p style="padding-bottom: 0px">Please input the information regarding your most recent link interaction.</p>
-				<form action="#" method="POST" role="form">
-					<div class="row" style="padding-left:15px; padding-right: 15px">
-						<div class="col s5 input-special input--chisato" style="padding-bottom: 0px; padding-left: 15px">
-							<input class="input__field input__field--chisato" type="text" id="link-date" required>
-							<label class="input__label input__label--chisato" for="link-date">
-								<div class="input__label-content input__label-content--chisato" data-content="Date of Link Interaction">Date of Link Interaction</div>
-							</label>
-						</div>
-						<div class="col s5 input-special input--chisato" style="padding-bottom: 0px">
-							<select id="duration" class="browser-default input__field input__field--chisato" style="color:#000000; font-size: 1rem" required>
-								<option value="" disabled selected></option>
-								<option value="1">0.25 hours</option>
-								<option value="2">0.50 hours</option>
-								<option value="3">0.75 hours</option>
-								<option value="1">1 hour</option>
-								<option value="1">1.25 hours</option>
-								<option value="2">1.50 hours</option>
-								<option value="3">1.75 hours</option>
-								<option value="1">2 hours</option>
-								<option value="1">2.25 hours</option>
-								<option value="2">2.50 hours</option>
-								<option value="3">2.75 hours</option>
-								<option value="1">3 hours or more</option>
-							</select>
-							<label class="input__label input__label--chisato" for="duration">
-								<div class="input__label-content input__label-content--chisato" data-content="Duration">Duration</div>
-							</label>
-						</div>
-						<div class="col s12 input-special input--chisato" style="padding-bottom: 0px; margin-top: 0em">
-							<select id="elder-name" class="browser-default input__field input__field--chisato" style="color:#000000; font-size: 1rem" required>
-								<option value="" disabled selected></option>
-								<option value="1">Carl Fredrickson</option>
-							</select>
-							<label class="input__label input__label--chisato" for="duration">
-								<div class="input__label-content input__label-content--chisato" data-content="Elder Name">Elder Name</div>
-							</label>
-						</div>
-						<div class="col s12 input-special input--chisato" style="padding-bottom: 0px">
-							<textarea id="comments" class="materialize-textarea input__field input__field--chisato"></textarea>
-							<label class="input__label input__label--chisato" for="message">
-								<div class="input__label-content input__label-content--chisato" data-content="Comments">Comments(Optional)</div>
-							</label>
-						</div>
-					</div> <!-- row -->
-					<div class="row cd-buttons">
-						<div class="col s6 submit" style="padding: 0 0 0 0">
-							<button class="submit" type="submit">Submit</button>
-						</div>
-						<div class="col s6 cancel" style="padding: 0 0 0 0">
-							<button class=" cancel cd-popup-close">Cancel</button>
-						</div>
-					</div>
-				</form>
-				<!--<a href="#0" class="cd-popup-close img-replace"></a>-->
-			</div> <!-- cd-popup-container -->
-		</div> <!-- cd-popup -->
 	</nav>
 
 	<div class="content-wrapper">
@@ -402,6 +342,68 @@
 				</section> <!-- cd-handbook -->
 			</div> <!-- col s12 -->
 		</div><!-- row -->
+
+		<div class="cd-popup" role="alert">
+			<div class="cd-popup-container">
+				<h3>New Log Entry</h3>
+				<p style="padding-bottom: 0px">Please fill out the form below with information regarding your most recent phone link.</p>
+				<form action="#" method="POST" role="form">
+					<div class="row" style="padding-left:15px; padding-right: 15px">
+						<div class="col s5 input-special input--chisato" style="padding-bottom: 0px; padding-left: 15px">
+							<input class="input__field input__field--chisato" type="text" id="link-date" required>
+							<label class="input__label input__label--chisato" for="link-date">
+								<div class="input__label-content input__label-content--chisato" data-content="Date of Contact">Date of Contact</div>
+							</label>
+						</div>
+						<div class="col s5 input-special input--chisato" style="padding-bottom: 0px">
+							<select id="duration" class="browser-default input__field input__field--chisato" style="color:#000000; font-size: 1rem" required>
+								<option value="" disabled selected></option>
+								<option value="1">0.25 hours</option>
+								<option value="2">0.50 hours</option>
+								<option value="3">0.75 hours</option>
+								<option value="1">1 hour</option>
+								<option value="1">1.25 hours</option>
+								<option value="2">1.50 hours</option>
+								<option value="3">1.75 hours</option>
+								<option value="1">2 hours</option>
+								<option value="1">2.25 hours</option>
+								<option value="2">2.50 hours</option>
+								<option value="3">2.75 hours</option>
+								<option value="1">3 hours or more</option>
+							</select>
+							<label class="input__label input__label--chisato" for="duration">
+								<div class="input__label-content input__label-content--chisato" data-content="Duration">Duration</div>
+							</label>
+						</div>
+						<div class="col s12 input-special input--chisato" style="padding-bottom: 0px; margin-top: 0em">
+							<select id="elder-name" class="browser-default input__field input__field--chisato" style="color:#000000; font-size: 1rem" required>
+								<option value="" disabled selected></option>
+								<option value="1">Carl Fredrickson</option>
+							</select>
+							<label class="input__label input__label--chisato" for="duration">
+								<div class="input__label-content input__label-content--chisato" data-content="Elder Name">Elder Name</div>
+							</label>
+						</div>
+						<div class="col s12 input-special input--chisato" style="padding-bottom: 0px">
+							<textarea id="comments" class="materialize-textarea input__field input__field--chisato"></textarea>
+							<label class="input__label input__label--chisato" for="message">
+								<div class="input__label-content input__label-content--chisato" data-content="Comments">Comments(Optional)</div>
+							</label>
+						</div>
+					</div> <!-- row -->
+					<div class="row cd-buttons">
+						<div class="col s6 submit" style="padding: 0 0 0 0">
+							<button class="submit" type="submit">Submit</button>
+						</div>
+						<div class="col s6 cancel" style="padding: 0 0 0 0">
+							<button class=" cancel cd-popup-close">Cancel</button>
+						</div>
+					</div>
+				</form>
+				<!--<a href="#0" class="cd-popup-close img-replace"></a>-->
+			</div> <!-- cd-popup-container -->
+		</div> <!-- cd-popup -->
+
 	</div> <!-- .content-wrapper -->
 </main> <!-- .cd-main-content -->
 <script src="js/jquery-2.1.4.js"></script>
