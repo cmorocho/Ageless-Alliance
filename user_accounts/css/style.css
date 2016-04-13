@@ -363,24 +363,26 @@ Sidebar
   transform: translateY(-50%);
   height: 16px;
   width: 16px;
-  background: url(../img/cd-nav-icons.svg) no-repeat 0 0;
+  /*background: url(../img/cd-nav-icons.svg) no-repeat 0 0;*/
 }
 .cd-side-nav > ul > li.home > a::before {
+  background-image: url("../img/home.png");
   background-position: -64px 0;
 }
 .cd-side-nav > ul > li.notifications > a::before {
+  background-image: url("../img/notifications.png");
   background-position: -80px 0;
 }
 .cd-side-nav > ul > li.handbook > a::before {
+  background-image: url("../img/handbook.png");
   background-position: -48px 0;
 }
 .cd-side-nav > ul > li.log-history > a::before {
+  background-image: url("../img/log-history.png");
   background-position: -32px 0;
 }
-.cd-side-nav > ul > li.contact > a::before {
-  background-position: 0 0;
-}
 .cd-side-nav > ul > li.support > a::before {
+  background-image: url("../img/contact.png");
   background-position: -16px 0;
 }
 .cd-side-nav .count {
@@ -841,8 +843,8 @@ xpopup
     -webkit-transition: background-color 0.2s;
     -moz-transition: background-color 0.2s;
     transition: background-color 0.2s;
-    background: #ff8a65;
-    border: 2px solid #ff8a65;
+    background: #428CA6;
+    border: 2px solid #428CA6;
     border-radius: 0 0 0 .25em;
 }
 .cd-popup-container .cd-buttons .cancel {
