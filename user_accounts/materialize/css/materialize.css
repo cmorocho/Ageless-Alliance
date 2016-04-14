@@ -2979,9 +2979,6 @@ td, th {
   font-size: 1.2rem;
   max-width: 1000px;
   max-height: 50px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 @media only screen and (max-width: 992px) {

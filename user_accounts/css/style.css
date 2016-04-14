@@ -1575,7 +1575,12 @@ JExpand: table expand
 #table-expand td { line-height: 29px; }
 #table-expand p {
   word-wrap: break-word;}
-#table-expand tr.odd td {  cursor:pointer; background-color: #ffffff; }
+#table-expand tr.odd td {
+  cursor:pointer;
+  background-color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 #table-expand tr:not(.odd) {
   border: 20px solid #E1F0F5;
   background-color: #E6F1F5;
