@@ -91,7 +91,7 @@ Header
 -------------------------------- */
 .cd-main-header {
   position: absolute;
-  z-index: 2;
+  z-index: 200;
   top: 0;
   left: 0;
   height: 45px;
@@ -779,7 +779,7 @@ xpopup
 
 .cd-popup {
     position: fixed;
-    z-index: 100;
+    z-index: 300;
     left: 0;
     top: 0;
     height: 100%;
@@ -1571,12 +1571,69 @@ Form Effects:
 JExpand: table expand
 
 -------------------------------- */
-.table-expand { border-collapse:collapse;}
-.table-expand h4 { margin:0px; padding:0px;}
-.table-expand img { float:right;}
-.table-expand ul { margin:10px 0 10px 40px; padding:0px;}
-/*.table-expand th { background:#7CB8E2 url(header_bkg.png) repeat-x scroll center left; color:#fff; padding:7px 15px; text-align:left;}*/
-.table-expand td { color:#000; padding:7px 15px; }
-/*.table-expand tr.odd td {  cursor:pointer; }*/
-.table-expand div.arrow { background:transparent url("../img/arrows.png") no-repeat scroll 0px -16px; width:16px; height:16px; display:block;}
-.table-expand div.up { background-position:0px 0px;}
+#table-expand { border-collapse:collapse;}
+#table-expand td { line-height: 29px; }
+#table-expand p {
+  word-wrap: break-word;}
+#table-expand tr.odd td {  cursor:pointer; background-color: #ffffff; }
+#table-expand tr:not(.odd) {
+  border: 20px solid #E1F0F5;
+  background-color: #E6F1F5;
+}
+#table-expand div.arrow {
+  background: transparent url("../img/arrows.png") no-repeat scroll 0px -16px;
+  width:16px;
+  height:16px;
+  display:block;}
+#table-expand div.up { background-position:0 0;}
+#table-expand .head {
+  background-color: #ff7e66 !important;
+  color: #FFFFFF;
+  border: 5px solid #ffffff !important;
+}
+
+/*!* --------------------------------*/
+
+/*Sticky Table Header*/
+
+/*-------------------------------- *!*/
+/*.sticky-wrap {*/
+  /*overflow-x: auto;*/
+  /*overflow-y: hidden;*/
+  /*position: relative;*/
+  /*margin: 3em 0;*/
+  /*width: 100%;*/
+/*}*/
+/*.sticky-wrap .sticky-thead,*/
+/*.sticky-wrap .sticky-col,*/
+/*.sticky-wrap .sticky-intersect {*/
+  /*opacity: 0;*/
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*left: 0;*/
+  /*transition: all .125s ease-in-out;*/
+  /*z-index: 50;*/
+  /*width: auto; !* Prevent table from stretching to full size *!*/
+/*}*/
+/*.sticky-wrap .sticky-thead {*/
+  /*box-shadow: 0 0.25em 0.1em -0.1em rgba(0,0,0,.125);*/
+  /*z-index: 100;*/
+  /*width: 100%; !* Force stretch *!*/
+/*}*/
+/*.sticky-wrap .sticky-intersect {*/
+  /*opacity: 1;*/
+  /*z-index: 150;*/
+
+/*}*/
+/*.sticky-wrap .sticky-intersect th {*/
+  /*background-color: #666;*/
+  /*color: #eee;*/
+/*}*/
+/*.sticky-wrap td,*/
+/*.sticky-wrap th {*/
+  /*box-sizing: border-box;*/
+/*}*/
+/*.sticky-wrap.overflow-y {*/
+  /*overflow-y: auto;*/
+  /*max-height: 50vh;*/
+/*}*/

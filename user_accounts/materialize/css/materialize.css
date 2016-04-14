@@ -2935,11 +2935,12 @@ table, th, td {
 table {
   width: 100%;
   display: table;
+  table-layout: fixed;
 }
 
 table.bordered > thead > tr,
 table.bordered > tbody > tr {
-  border-bottom: 1px solid #4ba8c9;
+  border-bottom: 1px solid #E1F0F5;
 }
 
 table.striped > tbody > tr:nth-child(odd) {
@@ -2963,9 +2964,10 @@ table.centered thead tr th, table.centered tbody tr td {
 }
 
 thead {
-  border-bottom: 1px solid #d0d0d0;
+  border: 5px solid #FFFFFF;
   background-color: #ff7e66;
   color: #FFFFFF;
+  box-shadow: 0 0.25em 0.1em -0.5em rgba(0,0,0,.125);
 }
 
 td, th {
@@ -2974,7 +2976,12 @@ td, th {
   text-align: left;
   vertical-align: middle;
   border-radius: 2px;
-    font-size: 1.2rem;
+  font-size: 1.2rem;
+  max-width: 1000px;
+  max-height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media only screen and (max-width: 992px) {
