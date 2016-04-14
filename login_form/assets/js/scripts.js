@@ -4,9 +4,9 @@ jQuery(document).ready(function() {
     /*
         Fullscreen background
     */
-    $.backstretch([
+   /* $.backstretch([
                     "assets/img/backgrounds/elderhands.jpg"
-	             ]);
+	             ]);*/
     
     /*
         Form validation

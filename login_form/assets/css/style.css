@@ -1,3 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Nunito:400,300,700);
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -6,6 +10,7 @@ body {
     color: #888;
     line-height: 30px;
     text-align: center;
+    background: #4ba8c9;
 }
 
 strong { font-weight: 500; }
@@ -17,6 +22,7 @@ a, a:hover, a:focus {
 }
 
 h1, h2 {
+    font-family: 'Merriweather';
 	margin-top: 10px;
 	font-size: 38px;
     font-weight: 100;
@@ -25,6 +31,7 @@ h1, h2 {
 }
 
 h3 {
+    font-family: 'Open Sans';
 	font-size: 22px;
     font-weight: 300;
     color: #555;
@@ -163,7 +170,7 @@ img { max-width: 100%; }
 }
 
 .form-bottom form .input-error {
-	border-color: #de995e;
+	border-color: #ff8a65;
 }
 
 .social-login {
