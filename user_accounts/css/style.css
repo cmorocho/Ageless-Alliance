@@ -466,7 +466,7 @@ Sidebar
   }
   .cd-side-nav .active > a {
     /* current page */
-    box-shadow: inset 3px 0 0 #4ba8c9;
+    box-shadow: inset 8px 0 0 #4ba8c9;
     background-color: #42474D;
   }
   .cd-side-nav .action-btn a {

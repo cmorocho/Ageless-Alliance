@@ -124,6 +124,53 @@ section.intro, section.background, section.sign-up {
 section.background, section.blog-intro, section.blog {
   background: #ffffff; }
 
+.referral-box {
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  padding: 50px 0 50px 0;
+}
+
+.form-top {
+  overflow: hidden;
+  padding: 0 25px 15px 25px;
+  background: #fff;
+  -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+  text-align: left;
+}
+
+.form-top-left {
+  float: left;
+  width: 75%;
+  padding-top: 25px;
+}
+
+.form-top-left h3 { margin-top: 0; }
+
+.form-top-right {
+  float: left;
+  width: 25%;
+  padding-top: 5px;
+  font-size: 66px;
+  color: #ddd;
+  line-height: 100px;
+  text-align: right;
+}
+
+.form-bottom {
+  padding: 25px 25px 30px 25px;
+  background: #eee;
+  -moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+  text-align: left;
+}
+
+.form-top-divider {
+  float: left;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
+}
 
 /* ==========================================================================
 Global Styles
@@ -157,7 +204,8 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   color: rgba(28, 54, 83, 0.6);
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+  background-color: #F0F5F7; }
 
 ul, ol {
   margin: 0;
@@ -669,10 +717,10 @@ Sign up form
 .sign-up .signup-form .sign-up-btn {
   padding: 15px 0;
   border-radius: 3px;
-  width: 80%;
+  width: 100%;
   font-size: 16px; }
 .sign-up .signup-form .form-input-group {
-  width: 80%;
+  width: 100%;
   height: 55px;
   margin: 0 auto 10px;
   border-radius: 5px;
