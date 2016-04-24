@@ -72,11 +72,11 @@ h5 {
 
 .btn-fill {
   color: #fff;
-  border: solid 2px #4ba8c9;
+  border: solid 2px #4AA7C8;
   /*border-radius: 40px;*/
   display: inline-block;
   text-transform: uppercase;
-  background-color: #4ba8c9; }
+  background-color: #4AA7C8; }
 
 .btn-fill:hover, .btn-fill:focus {
   color: #fff;
@@ -187,7 +187,7 @@ Global Styles
   margin: 0; }
 
 a {
-  color: #4ba8c9;
+  color: #4AA7C8;
   font-weight: bold;
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
@@ -466,7 +466,7 @@ Hero
 
 .fixed {
   position: fixed;
-  background-color: #4ba8c9;
+  background-color: #4AA7C8;
   z-index: 999;
   width: 100%; }
 
@@ -728,7 +728,7 @@ Sign up form
   text-align: left;
   position: relative; }
   .sign-up .signup-form .form-input-group i {
-    color: #4ba8c9;
+    color: #4AA7C8;
     font-size: 14px; }
   .sign-up .signup-form .form-input-group i:after {
     content: "";
@@ -818,7 +818,7 @@ footer {
   footer a {
     color: #fff; }
   footer a:hover {
-    color: #4ba8c9; }
+    color: #4AA7C8; }
   footer ul.footer-group {
     border-top: solid 1px #4E566C;
     padding-top: 25px;
@@ -829,7 +829,7 @@ footer {
     font-size: 16px;
     text-transform: uppercase; }
   footer ul.footer-group li a:hover {
-    color: #4ba8c9; }
+    color: #4AA7C8; }
   footer ul.footer-group li {
     margin-right: 30px; }
   footer ul.footer-group li:last-child {
