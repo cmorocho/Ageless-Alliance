@@ -77,17 +77,20 @@
                     </div>
 
                     <div class='form-group'>
-                        <label class='control-label col-md-2 col-md-offset-2'>Elder's Age</label>
-                        <div class='col-md-6'>
-                            <div class='form-group'>
-                                <div class='col-md-11'>
-                                    <input class='form-control' id='elder age' placeholder='Age' type='text' required>
-                                </div>
-                            </div>
+                        <label class='control-label col-md-2 col-md-offset-2' for='id_age'>Elder's Estimated Age</label>
+                        <div class='col-md-2'>
+                            <select class='form-control' id='id_age' required>
+                                <option disabled selected value>- Select an Option -</option>
+                                <option>65-75</option>
+                                <option>76-85</option>
+                                <option>86-95</option>
+                                <option>96 and up</option>
+                            </select>
                         </div>
                     </div>
 
-                    <div class='form-group'>
+                   <!-- ELDER'S PHONE NUMBER -->
+                   <!-- <div class='form-group'>
                         <label class='control-label col-md-2 col-md-offset-2' for='id_email'>Elder's Phone Number</label>
                         <div class='col-md-6'>
                             <div class='form-group internal'>
@@ -96,46 +99,47 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <div class='form-group'>
-                        <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>Institution Referring This Elder</label>
+                        <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>Senior Center Referring</label>
                         <div class='col-md-2'>
                             <select class='form-control' id='id_accomodation' required>
-                                <option>Institution #1</option>
-                                <option>Institution #2</option>
-                                <option>Institution #3</option>
+                                <option disabled selected value>- Select an Option -</option>
+                                <option>Senior Center #1</option>
+                                <option>Senior Center #2</option>
+                                <option>Senior Center #3</option>
                             </select>
                         </div>
                     </div>
 
                     <div class='form-group'>
-                        <label class='control-label col-md-2 col-md-offset-2'>Your Name</label>
+                        <label class='control-label col-md-2 col-md-offset-2'>Name of Person Referring</label>
                         <div class='col-md-8'>
                             <div class='col-md-3 indent-small'>
                                 <div class='form-group internal'>
-                                    <input class='form-control' id='first_name' placeholder='First Name' type='text'>
+                                    <input class='form-control' id='first_name' placeholder='First Name' type='text' required>
                                 </div>
                             </div>
                             <div class='col-md-3 indent-small'>
                                 <div class='form-group internal'>
-                                    <input class='form-control' id='last_name' placeholder='Last Name' type='text'>
+                                    <input class='form-control' id='last_name' placeholder='Last Name' type='text' required>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class='form-group'>
-                        <label class='control-label col-md-2 col-md-offset-2' for='id_email'>Institution Info</label>
+                        <label class='control-label col-md-2 col-md-offset-2' for='id_email'>Contact Information</label>
                         <div class='col-md-6'>
                             <div class='form-group'>
                                 <div class='col-md-11'>
-                                    <input class='form-control' id='id_email' placeholder='E-mail' type='text'>
+                                    <input class='form-control' id='id_email' placeholder='E-mail' type='text' required>
                                 </div>
                             </div>
                             <div class='form-group internal'>
                                 <div class='col-md-11'>
-                                    <input class='form-control' id='id_phone' placeholder='Phone: (xxx) - xxx xxxx' type='text'>
+                                    <input class='form-control' id='id_phone' placeholder='Phone: (xxx) - xxx xxxx' type='text' required>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +154,7 @@
                     </div>
                     <div class='form-group'>
                         <div class='col-md-offset-5 col-md-2'>
-                            <button type="submit" class="btn btn-ghost btn-accent-other btn-large sign-up-btn" onclick="location.href='ageless_link/index.html'">Submit</button>
+                            <button type="submit" class="btn btn-ghost btn-accent-other btn-large sign-up-btn">Submit</button>
                         </div>
                         <!--<div class='col-md-3'>-->
                             <!--<button class='btn-lg btn-danger' style='float:right' type='submit' onclick="location.href='ageless_link/index.html'">Cancel</button>-->
