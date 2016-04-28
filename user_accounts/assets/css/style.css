@@ -213,7 +213,7 @@ hr {
 	background-color: #4ba8c9;
 }
 
-ul.top-menu > li > .logout {
+.logout-btn {
 	color: #f2f2f2;
 	font-size: 12px;
 	border-radius: 4px;
@@ -602,7 +602,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     margin-top: 7px;
 }
 
-.top-nav ul.top-menu > li .dropdown-menu.logout {
+.top-nav ul.top-menu > li .dropdown-menu.logout-btn {
     width: 268px !important;
 
 }
@@ -613,13 +613,13 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     left: auto;
 }
 
-.dropdown-menu.extended.logout > li {
+.dropdown-menu.extended.logout-btn > li {
     float: left;
     text-align: center;
     width: 33.3%;
 }
 
-.dropdown-menu.extended.logout > li:last-child {
+.dropdown-menu.extended.logout-btn > li:last-child {
     float: left;
     text-align: center;
     width: 100%;
@@ -627,39 +627,39 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     border-radius: 0 0 3px 3px;
 }
 
-.dropdown-menu.extended.logout > li:last-child > a, .dropdown-menu.extended.logout > li:last-child > a:hover {
+.dropdown-menu.extended.logout-btn > li:last-child > a, .dropdown-menu.extended.logout-btn > li:last-child > a:hover {
     color: #fff;
     border-bottom: none !important;
     text-transform: uppercase;
 }
 
-.dropdown-menu.extended.logout > li:last-child > a:hover > i{
+.dropdown-menu.extended.logout-btn > li:last-child > a:hover > i{
     color: #fff;
 }
 
-.dropdown-menu.extended.logout > li > a {
+.dropdown-menu.extended.logout-btn > li > a {
     color: #a4abbb;
     border-bottom: none !important;
 }
 
-.full-width .dropdown-menu.extended.logout > li > a:hover {
+.full-width .dropdown-menu.extended.logout-btn > li > a:hover {
     background: none !important;
     color: #50c8ea !important;
 }
 
-.dropdown-menu.extended.logout > li > a:hover {
+.dropdown-menu.extended.logout-btn > li > a:hover {
     background: none !important;
 }
 
-.dropdown-menu.extended.logout > li > a:hover i {
+.dropdown-menu.extended.logout-btn > li > a:hover i {
     color: #50c8ea;
 }
 
-.dropdown-menu.extended.logout > li > a i {
+.dropdown-menu.extended.logout-btn > li > a i {
     font-size: 17px;
 }
 
-.dropdown-menu.extended.logout > li > a > i {
+.dropdown-menu.extended.logout-btn > li > a > i {
     display: block;
 }
 
@@ -680,7 +680,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     background: #F1F2F7;
 }
 
-.top-nav .dropdown-menu.extended.logout {
+.top-nav .dropdown-menu.extended.logout-btn {
     top: 50px;
 }
 
@@ -694,7 +694,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .log-arrow-up {
-    background: url("../img/arrow-up.png") no-repeat;
+    /*background: url("../img/arrow-up.png") no-repeat;*/
     width: 20px;
     height: 11px;
     position: absolute;
@@ -1175,7 +1175,7 @@ PANELS CONFIGURATIONS
 
 /* Weather 1 */
 .weather {
-	background: url(../img/weather.jpg) no-repeat center top;
+	/*background: url(../img/weather.jpg) no-repeat center top;*/
 	text-align: center;
 	background-position: center center;
 }
@@ -1331,7 +1331,7 @@ PANELS CONFIGURATIONS
 
 /* Soptify Panel */
 #spotify {
-	background: url(../img/lorde.jpg) no-repeat center top;
+	/*background: url(../img/lorde.jpg) no-repeat center top;*/
 	margin-top: -15px;
 	background-attachment: relative;
 	background-position: center center;
@@ -1375,7 +1375,7 @@ PANELS CONFIGURATIONS
 
 /* BLOG PANEL */
 #blog-bg {
-	background: url(../img/blog-bg.jpg) no-repeat center top;
+	/*background: url(../img/blog-bg.jpg) no-repeat center top;*/
 	margin-top: -15px;
 	background-attachment: relative;
 	background-position: center center;
