@@ -110,3 +110,22 @@ function logout() {
     update_to_login();
     window.location = 'index.html';
 }
+
+/*
+    change email
+ */
+function change_email() {
+    var old_email = document.getElementById("current_email").value,
+        new_email = document.getElementById("").value;
+    dataRef.changeEmail({
+        oldEmail : old_email,
+        newEmail : new_email,
+        password : password
+    }, function(error) {
+        if (error === null) {
+            console.log("Email changed successfully");
+        } else {
+            console.log("Error changing email:", error);
+        }
+    });
+}
