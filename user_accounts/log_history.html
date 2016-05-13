@@ -34,6 +34,8 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
     <![endif]-->
+      <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
   </head>
 
   <body>
@@ -52,7 +54,7 @@
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../index.html">Logout</a></li>
+                    <li><a href="#0" class="logout-btn" onclick="logout()">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -67,20 +69,14 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-                  <p class="centered" style="padding-top: 20px"><a href="account_settings.html"><img src="assets/img/ui-jane.png" class="img-circle" width="50"></a></p>
-                  <h5 class="centered">Jane Doe</h5>
+                  <p class="centered" style="padding-top: 20px"><a href="account_settings.html"><img src="assets/img/ui-user.png" class="img-circle" width="50"></a></p>
+                  <h5 class="centered user_name"></h5>
 
                   <li  class="mt"><p style="color: #646a6f; text-transform: uppercase">Main</li>
                   <li class="sub-menu">
                       <a href="account-official.html">
                           <i class="fa fa-home"></i>
                           <span>Home</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="volunteer-training.html">
-                          <i class="fa fa-book"></i>
-                          <span>Volunteer Training</span>
                       </a>
                   </li>
                   <li class="sub-menu">
@@ -152,139 +148,140 @@
                                   <th rowspan="1" colspan="1">Comments</th>
                               </tr>
                               </tfoot>
-                              <tbody>
-                              <tr role="row" class="odd">
-                                  <td>04/06/16</td>
-                                  <td>1.75 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td>Mr. Fredrickson and I have planned our first meeting. We've been
-                                      discussing how we both enjoy Legos and how it never fails to brighten
-                                      our day when we see a cool piece or creation.</td>
-                              </tr><tr role="row" class="even">
-                                  <td>03/28/16</td>
-                                  <td>1.75 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td>Today Mr. Fredrickson and I spoke for the longest time. We shared
-                                      stories about our family. He's lived a long and full life. It's incredibly
-                                      amusing. Unfortunately, times have been tough for him lately.</td>
-                              </tr><tr role="row" class="odd">
-                                  <td>03/16/16</td>
-                                  <td>1.75 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td></td>
-                              </tr><tr role="row" class="even">
-                                  <td>03/03/16</td>
-                                  <td>2.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td>Mr. Fredrickson is awesome!</td>
-                              </tr><tr role="row" class="odd">
-                                  <td>02/25/16</td>
-                                  <td>1.0 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td></td>
-                              </tr><tr role="row" class="even">
-                                  <td>02/18/16</td>
-                                  <td>1.75 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td>Today was the first time I spoke to Carl Fredrickson.
-                                      It was a bit awkward at first, but after the introductions, we found out
-                                      that we have quite a few things in common!</td>
-                              </tr><tr role="row" class="odd">
-                                  <td>02/11/16</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td></td>
-                              </tr><tr role="row" class="even">
-                                  <td>02/04/16</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td></td>
-                              </tr><tr role="row" class="odd">
-                                  <td>01/28/16</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td></td>
-                              </tr><tr role="row" class="even">
-                                  <td>01/21/16</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td></td>
-                              </tr><tr role="row" class="even">
-                                  <td>01/14/16</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td></td>
-                              </tr><tr role="row" class="even">
-                                  <td>01/07/16</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td></td>
-                              </tr><tr role="row" class="even">
-                                  <td>12/31/15</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>
-                              </tr><tr role="row" class="even">
-                                  <td>12/24/15</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>
-                              </tr><tr role="row" class="even">
-                                  <td>12/17/15</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>
-                              </tr><tr role="row" class="even">
-                                  <td>12/10/15</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td></td>
-                              </tr><tr role="row" class="even">
-                                  <td>12/03/15</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>
-                              </tr><tr role="row" class="even">
-                                  <td>11/26/15</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>
-                              </tr><tr role="row" class="even">
-                                  <td>11/19/15</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td></td>
-                              </tr><tr role="row" class="even">
-                                  <td>11/12/15</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>
-                              </tr><tr role="row" class="even">
-                                  <td>11/05/15</td>
-                                  <td>0.5 hours</td>
-                                  <td>Carl Fredrickson</td>
-                                  <td>(123) 456-7890</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>
+                              <tbody id="log_history">
+                              <!--<tr role="row" class="odd">-->
+                                  <!--<td>04/06/16</td>-->
+                                  <!--<td>1.75 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td>Mr. Fredrickson and I have planned our first meeting. We've been-->
+                                      <!--discussing how we both enjoy Legos and how it never fails to brighten-->
+                                      <!--our day when we see a cool piece or creation.</td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>03/28/16</td>-->
+                                  <!--<td>1.75 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td>Today Mr. Fredrickson and I spoke for the longest time. We shared-->
+                                      <!--stories about our family. He's lived a long and full life. It's incredibly-->
+                                      <!--amusing. Unfortunately, times have been tough for him lately.</td>-->
+                              <!--</tr><tr role="row" class="odd">-->
+                                  <!--<td>03/16/16</td>-->
+                                  <!--<td>1.75 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td></td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>03/03/16</td>-->
+                                  <!--<td>2.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td>Mr. Fredrickson is awesome!</td>-->
+                              <!--</tr><tr role="row" class="odd">-->
+                                  <!--<td>02/25/16</td>-->
+                                  <!--<td>1.0 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td></td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>02/18/16</td>-->
+                                  <!--<td>1.75 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td>Today was the first time I spoke to Carl Fredrickson.-->
+                                      <!--It was a bit awkward at first, but after the introductions, we found out-->
+                                      <!--that we have quite a few things in common!</td>-->
+                              <!--</tr><tr role="row" class="odd">-->
+                                  <!--<td>02/11/16</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td></td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>02/04/16</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td></td>-->
+                              <!--</tr><tr role="row" class="odd">-->
+                                  <!--<td>01/28/16</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td></td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>01/21/16</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td></td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>01/14/16</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td></td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>01/07/16</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td></td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>12/31/15</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>12/24/15</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>12/17/15</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>12/10/15</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td></td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>12/03/15</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>11/26/15</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>11/19/15</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td></td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>11/12/15</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>-->
+                              <!--</tr><tr role="row" class="even">-->
+                                  <!--<td>11/05/15</td>-->
+                                  <!--<td>0.5 hours</td>-->
+                                  <!--<td>Carl Fredrickson</td>-->
+                                  <!--<td>(123) 456-7890</td>-->
+                                  <!--<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem!</td>-->
+                              <!--</tr>-->
                               </tbody>
                           </table>
                       </div>

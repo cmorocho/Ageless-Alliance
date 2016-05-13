@@ -32,6 +32,8 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <![endif]-->
+      <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
   </head>
 
   <body>
@@ -65,20 +67,14 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-                  <p class="centered" style="padding-top: 20px"><a href="account_settings.html"><img src="assets/img/ui-jane.png" class="img-circle" width="50"></a></p>
-                  <h5 class="centered">Jane Doe</h5>
+                  <p class="centered" style="padding-top: 20px"><a href="account_settings.html"><img src="assets/img/ui-user.png" class="img-circle" width="50"></a></p>
+                  <h5 class="centered user_name"></h5>
 
                   <li  class="mt"><p style="color: #646a6f; text-transform: uppercase">Main</li>
                   <li class="sub-menu">
                       <a href="account-official.html" class="active">
                           <i class="fa fa-home"></i>
                           <span>Home</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="volunteer-training.html">
-                          <i class="fa fa-book"></i>
-                          <span>Volunteer Training</span>
                       </a>
                   </li>
                   <li class="sub-menu">
@@ -134,8 +130,8 @@
                   <div class="col-lg-8 col-md-8 col-sm-12 col-lg-offset-2 col-md-offset-2 mb">
                       <div class="welcome-panel pn">
                           <h3>Welcome back!</h3>
-                          <p><img src="assets/img/ui-jane.png" class="img-circle" width="60"></p>
-                          <p><b>Jane Doe</b></p>
+                          <p><img src="assets/img/ui-user.png" class="img-circle" width="60"></p>
+                          <p><b class="user_name"></b></p>
                       </div>
                       <div class="profile-01 centered">
                           <a href="new_log_entry.html"><p>SUBMIT NEW LOG ENTRY</p></a>
@@ -177,42 +173,42 @@
                               <th tabindex="0" rowspan="1" colspan="1" aria-label="Comments: activate to sort column ascending" style="width: 45%;">Comments</th>
                           </tr>
                           </thead>
-                          <tbody>
-                          <tr role="row" class="odd">
-                              <td>04/06/16</td>
-                              <td>1.75 hours</td>
-                              <td>Carl Fredrickson</td>
-                              <td>(123) 456-7890</td>
-                              <td>Mr. Fredrickson and I have planned our first meeting. We've been
-                                  discussing how we both enjoy Legos and how it never fails to brighten
-                                  our day when we see a cool piece or creation.</td>
-                          </tr><tr role="row" class="even">
-                              <td>03/28/16</td>
-                              <td>1.75 hours</td>
-                              <td>Carl Fredrickson</td>
-                              <td>(123) 456-7890</td>
-                              <td>Today Mr. Fredrickson and I spoke for the longest time. We shared
-                                  stories about our family. He's lived a long and full life. It's incredibly
-                                  amusing. Unfortunately, times have been tough for him lately.</td>
-                          </tr><tr role="row" class="odd">
-                              <td>03/16/16</td>
-                              <td>1.75 hours</td>
-                              <td>Carl Fredrickson</td>
-                              <td>(123) 456-7890</td>
-                              <td></td>
-                          </tr><tr role="row" class="even">
-                              <td>03/03/16</td>
-                              <td>2.5 hours</td>
-                              <td>Carl Fredrickson</td>
-                              <td>(123) 456-7890</td>
-                              <td>Mr. Fredrickson is awesome!</td>
-                          </tr><tr role="row" class="odd">
-                              <td>02/25/16</td>
-                              <td>1.0 hours</td>
-                              <td>Carl Fredrickson</td>
-                              <td>(123) 456-7890</td>
-                              <td></td>
-                          </tr>
+                          <tbody id="log_history">
+                          <!--<tr role="row" class="odd">-->
+                              <!--<td>04/06/16</td>-->
+                              <!--<td>1.75 hours</td>-->
+                              <!--<td>Carl Fredrickson</td>-->
+                              <!--<td>(123) 456-7890</td>-->
+                              <!--<td>Mr. Fredrickson and I have planned our first meeting. We've been-->
+                                  <!--discussing how we both enjoy Legos and how it never fails to brighten-->
+                                  <!--our day when we see a cool piece or creation.</td>-->
+                          <!--</tr><tr role="row" class="even">-->
+                              <!--<td>03/28/16</td>-->
+                              <!--<td>1.75 hours</td>-->
+                              <!--<td>Carl Fredrickson</td>-->
+                              <!--<td>(123) 456-7890</td>-->
+                              <!--<td>Today Mr. Fredrickson and I spoke for the longest time. We shared-->
+                                  <!--stories about our family. He's lived a long and full life. It's incredibly-->
+                                  <!--amusing. Unfortunately, times have been tough for him lately.</td>-->
+                          <!--</tr><tr role="row" class="odd">-->
+                              <!--<td>03/16/16</td>-->
+                              <!--<td>1.75 hours</td>-->
+                              <!--<td>Carl Fredrickson</td>-->
+                              <!--<td>(123) 456-7890</td>-->
+                              <!--<td></td>-->
+                          <!--</tr><tr role="row" class="even">-->
+                              <!--<td>03/03/16</td>-->
+                              <!--<td>2.5 hours</td>-->
+                              <!--<td>Carl Fredrickson</td>-->
+                              <!--<td>(123) 456-7890</td>-->
+                              <!--<td>Mr. Fredrickson is awesome!</td>-->
+                          <!--</tr><tr role="row" class="odd">-->
+                              <!--<td>02/25/16</td>-->
+                              <!--<td>1.0 hours</td>-->
+                              <!--<td>Carl Fredrickson</td>-->
+                              <!--<td>(123) 456-7890</td>-->
+                              <!--<td></td>-->
+                          <!--</tr>-->
                           </tbody>
                       </table>
                   </div>

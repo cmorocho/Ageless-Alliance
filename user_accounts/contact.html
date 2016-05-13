@@ -25,6 +25,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+      <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
   </head>
 
   <body>
@@ -43,7 +45,7 @@
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../index.html">Logout</a></li>
+                    <li><a href="#0" class="logout-btn" onclick="logout()">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -58,20 +60,14 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-                  <p class="centered" style="padding-top: 20px"><a href="account_settings.html"><img src="assets/img/ui-jane.png" class="img-circle" width="50"></a></p>
-                  <h5 class="centered">Jane Doe</h5>
+                  <p class="centered" style="padding-top: 20px"><a href="account_settings.html"><img src="assets/img/ui-user.png" class="img-circle" width="50"></a></p>
+                  <h5 class="centered user_name"></h5>
 
                   <li  class="mt"><p style="color: #646a6f; text-transform: uppercase">Main</li>
                   <li class="sub-menu">
                       <a href="account-official.html">
                           <i class="fa fa-home"></i>
                           <span>Home</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="volunteer-training.html">
-                          <i class="fa fa-book"></i>
-                          <span>Volunteer Training</span>
                       </a>
                   </li>
                   <li class="sub-menu">
