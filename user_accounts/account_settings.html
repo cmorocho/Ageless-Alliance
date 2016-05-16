@@ -173,7 +173,7 @@
                               </div>
                               <div class="col-md-6">
                                   <p class="small mt">TOTAL HOURS</p>
-                                  <p>18</p>
+                                  <p id="total_hours"></p>
                               </div>
                           </div>
                       </div>
@@ -186,17 +186,8 @@
                           </div>
                           <div class="panel-body">
                               <div class="task-content">
-                                  <ul class="task-list">
-                                      <li>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">Elder: <b>Carl Fredrickson</b>, (123) 456-7890</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#cancelLink">
-                                                      <i class="fa fa-times"></i> Cancel
-                                                  </button>
-                                              </div>
-                                          </div>
-                                      </li>
+                                  <ul class="task-list" id="current_links">
+
                                   </ul>
                               </div>
 
@@ -311,24 +302,7 @@
                           </div>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Send Request</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="modal fade" id="cancelLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                      <div class="modal-content">
-                          <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                              <h4 class="modal-title" id="cancelLinkLabel">Cancel Link</h4>
-                          </div>
-                          <div class="modal-body">
-                              Are you sure you want to unlink/unmatch with this elder?
-                          </div>
-                          <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                              <button type="button" class="btn btn-primary">Yes</button>
+                              <button type="button" class="btn btn-primary" onclick="another_match();">Send Request</button>
                           </div>
                       </div>
                   </div>

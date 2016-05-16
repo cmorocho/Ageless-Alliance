@@ -172,7 +172,9 @@ function update_user_info(authData) {
                 var username_instances = document.getElementsByClassName('user_name'),
                     user_email = document.getElementById('current_email'),
                     user_phone = document.getElementById('current_phone'),
-                    member_date = document.getElementById('member_since');
+                    member_date = document.getElementById('member_since'),
+                    links = document.getElementById('current_links'),
+                    hours = document.getElementById('total_hours');
                 if (username_instances != null) {
                     for(var i = 0; i < username_instances.length; i++){
                         username_instances[i].innerText = data.val().name;
@@ -181,8 +183,47 @@ function update_user_info(authData) {
                 if (user_email != null) user_email.innerText = authData.password.email;
                 if (user_phone != null) user_phone.innerText = data.val().phone_number;
                 if (member_date != null) member_date.innerText = data.val().join_date;
+                if (links != null) update_current_links();
+                if (hours != null) update_total_hours();
             }
         });
+    }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
+}
+function update_current_links() {
+    var userMatchesRef = userRef.child(authData.uid).child("matches");
+    var links = document.getElementById('current_links'),
+        link_string = "";
+    userMatchesRef.on("value", function(snapshot) {
+        snapshot.forEach(function(data) {
+            if (window.location.pathname == "/user_accounts/account-official.html") {
+                link_string += "" +
+                    "<p><b>" + data.val().name + "</b></p>" +
+                    "<h6>Please call at: " + data.val().phone_number + "</h6>";
+            } else if (window.location.pathname == "/user_accounts/account_settings.html") {
+                link_string += "" +
+                    "<li>" +
+                    "<div class='task-title'>" +
+                    "<span class='task-title-sp'>Elder: <b>" + data.val().name + "</b>, " + data.val().phone_number + "</span>" +
+                    "</div>"
+                "</li>";
+            }
+        });
+        links.innerHTML = link_string;
+    }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
+}
+function update_total_hours() {
+    var userLogEntriesRef = userRef.child(authData.uid).child("log_entries");
+    var hours = document.getElementById('total_hours'),
+        accumulated_hours = 0;
+    userLogEntriesRef.on("value", function(snapshot) {
+        snapshot.forEach(function(data) {
+            accumulated_hours += parseFloat(data.val().duration);
+        });
+        hours.innerText = accumulated_hours;
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
     });
@@ -335,6 +376,14 @@ function match() {
     } else {
         console.log("there are currently no available to elders to match with");
     }
+}
+function unmatch() {
+
+}
+function another_match() {
+    match();
+    update_user_info(authData);
+    location.reload();
 }
 
 /*
