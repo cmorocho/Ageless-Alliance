@@ -28,6 +28,8 @@
     <meta name="google-signin-scope" content="profile email"> <!-- Google Sign-In -->
     <meta name="google-signin-client_id" content="470007620819-6i7o9k7hfhqkoo1asr134adcmj7ubo86.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
 </head>
 
 <body id="top">
@@ -77,9 +79,9 @@
                     </div>
 
                     <div class='form-group'>
-                        <label class='control-label col-md-2 col-md-offset-2' for='id_age'>Elder's Estimated Age</label>
+                        <label class='control-label col-md-2 col-md-offset-2' for='elder_age'>Elder's Estimated Age</label>
                         <div class='col-md-2'>
-                            <select class='form-control' id='id_age' required>
+                            <select class='form-control' id="elder_age" required>
                                 <option disabled selected value>- Select an Option -</option>
                                 <option>65-75</option>
                                 <option>76-85</option>
@@ -102,9 +104,9 @@
                     </div>-->
 
                     <div class='form-group'>
-                        <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>Senior Center Referring</label>
+                        <label class='control-label col-md-2 col-md-offset-2' for='elder_senior_center'>Senior Center Referring</label>
                         <div class='col-md-2'>
-                            <select class='form-control' id='id_accomodation' required>
+                            <select class='form-control' id="elder_senior_center" required>
                                 <option disabled selected value>- Select an Option -</option>
                                 <option>Senior Center #1</option>
                                 <option>Senior Center #2</option>
@@ -118,28 +120,28 @@
                         <div class='col-md-8'>
                             <div class='col-md-3 indent-small'>
                                 <div class='form-group internal'>
-                                    <input class='form-control' id='first_name' placeholder='First Name' type='text' required>
+                                    <input class='form-control' id='referring_first_name' placeholder='First Name' type='text' required>
                                 </div>
                             </div>
                             <div class='col-md-3 indent-small'>
                                 <div class='form-group internal'>
-                                    <input class='form-control' id='last_name' placeholder='Last Name' type='text' required>
+                                    <input class='form-control' id='referring_last_name' placeholder='Last Name' type='text' required>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class='form-group'>
-                        <label class='control-label col-md-2 col-md-offset-2' for='id_email'></label>
+                        <label class='control-label col-md-2 col-md-offset-2' for='referring_email'></label>
                         <div class='col-md-6'>
                             <div class='form-group'>
                                 <div class='col-md-11'>
-                                    <input class='form-control' id='id_email' placeholder='E-mail' type='text' required>
+                                    <input class='form-control' id='referring_email' placeholder='E-mail' type='text' required>
                                 </div>
                             </div>
                             <div class='form-group internal'>
                                 <div class='col-md-11'>
-                                    <input class='form-control' id='id_phone' placeholder='Phone: (xxx) - xxx xxxx' type='text' required>
+                                    <input class='form-control' id='referring_phone' placeholder='Phone: xxx-xxx-xxxx' type='text' required>
                                 </div>
                             </div>
                         </div>
@@ -147,18 +149,15 @@
 
 
                     <div class='form-group'>
-                        <label class='control-label col-md-2 col-md-offset-2' for='id_comments'>Comments</label>
+                        <label class='control-label col-md-2 col-md-offset-2' for='referring_comments'>Comments</label>
                         <div class='col-md-6'>
-                            <textarea class='form-control' id='id_comments' placeholder='Additional comments' rows='3'></textarea>
+                            <textarea class='form-control' id='referring_comments' placeholder='Additional comments' rows='3'></textarea>
                         </div>
                     </div>
                     <div class='form-group'>
                         <div class='col-md-offset-5 col-md-2'>
-                            <button type="submit" class="btn btn-ghost btn-accent-other btn-large sign-up-btn">Submit</button>
+                            <button type="submit" class="btn btn-ghost btn-accent-other btn-large sign-up-btn" onclick="add_elder();">Submit</button>
                         </div>
-                        <!--<div class='col-md-3'>-->
-                            <!--<button class='btn-lg btn-danger' style='float:right' type='submit' onclick="location.href='ageless_link/index.html'">Cancel</button>-->
-                        <!--</div>-->
                     </div>
                 </form>
             </div>
@@ -195,7 +194,7 @@
         </div>
     </div>
 </footer>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 <script src="bower_components/retina.js/dist/retina.js"></script>
 <script src="js/jquery.fancybox.pack.js"></script>
@@ -204,5 +203,8 @@
 <script src="js/jquery.flexslider-min.js"></script>
 <script src="bower_components/classie/classie.js"></script>
 <script src="bower_components/jquery-waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="js/jquery.serialize-object.compiled.js"></script>
+<script src="authentication.js"></script>
+<script src="js/firebase.js"></script>
 </body>
 </html>

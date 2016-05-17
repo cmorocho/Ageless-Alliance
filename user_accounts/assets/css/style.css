@@ -1079,13 +1079,12 @@ PANELS CONFIGURATIONS
 	text-align: center;
 	background: #ffffff;
 	color: #4ba8c9;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .white-panel p {
 	margin-top: 5px;
 	font-weight: 700;
-	margin-left: 15px;
 }
 .white-panel h5 {
     color: #f3f3f3;

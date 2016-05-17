@@ -26,6 +26,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+      <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
   </head>
 
   <body>
@@ -44,7 +46,7 @@
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../index.html">Logout</a></li>
+                    <li><a href="#0" class="logout-btn" onclick="logout()">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -59,20 +61,14 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-                  <p class="centered" style="padding-top: 20px"><a href="account_settings.html"><img src="assets/img/ui-jane.png" class="img-circle" width="50"></a></p>
-                  <h5 class="centered">Jane Doe</h5>
+                  <p class="centered" style="padding-top: 20px"><a href="account_settings.html"><img src="assets/img/ui-user.png" class="img-circle" width="50"></a></p>
+                  <h5 class="centered user_name"></h5>
 
                   <li  class="mt"><p style="color: #646a6f; text-transform: uppercase">Main</li>
                   <li class="sub-menu">
                       <a href="account-official.html">
                           <i class="fa fa-home"></i>
                           <span>Home</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="volunteer-training.html">
-                          <i class="fa fa-book"></i>
-                          <span>Volunteer Training</span>
                       </a>
                   </li>
                   <li class="sub-menu">
@@ -136,7 +132,7 @@
                                 <form class="form-horizontal style-form" method="get">
                                     <div class="form-group">
                                         <label for="date" class="col-md-2 control-label" style="margin-right: 15px">Date of Contact</label>
-                                        <div class="input-group date form_date col-md-5" data-date="" data-date-format="MM dd yyyy" data-link-field="dtp_input2" data-link-format="mm-dd-yyyy">
+                                        <div class="input-group date form_date col-md-5" data-date="" data-date-format="mm-dd-yyyy" data-link-field="dtp_input2" data-link-format="mm-dd-yyyy">
                                             <input id="date" class="form-control" size="16" type="text" value="" readonly required>
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                                         </div>
@@ -147,27 +143,27 @@
                                         <label for="duration" class="col-md-2 control-label">Duration</label>
                                         <div class="col-md-5">
                                             <select class="form-control" id="duration" required>
-                                                <option value="1">0.25 hours</option>
-                                                <option value="2">0.50 hours</option>
-                                                <option value="3">0.75 hours</option>
-                                                <option value="1">1 hour</option>
-                                                <option value="1">1.25 hours</option>
-                                                <option value="2">1.50 hours</option>
-                                                <option value="3">1.75 hours</option>
-                                                <option value="1">2 hours</option>
-                                                <option value="1">2.25 hours</option>
-                                                <option value="2">2.50 hours</option>
-                                                <option value="3">2.75 hours</option>
-                                                <option value="1">3 hours or more</option>
+                                                <option>0.25 hours</option>
+                                                <option>0.50 hours</option>
+                                                <option>0.75 hours</option>
+                                                <option>1 hour</option>
+                                                <option>1.25 hours</option>
+                                                <option>1.50 hours</option>
+                                                <option>1.75 hours</option>
+                                                <option>2 hours</option>
+                                                <option>2.25 hours</option>
+                                                <option>2.50 hours</option>
+                                                <option>2.75 hours</option>
+                                                <option>3 hours or more</option>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="elder-name" class="col-md-2 control-label">Elder Name</label>
+                                        <label for="elder_name" class="col-md-2 control-label">Elder Name</label>
                                         <div class="col-md-5">
-                                            <select class="form-control" id="elder-name" required>
-                                                <option value="1">Carl Fredrickson</option>
+                                            <select class="form-control" id="elder_name" required>
+                                                <!--<option>Carl Fredrickson</option>-->
                                             </select>
                                         </div>
                                     </div>
@@ -175,10 +171,10 @@
                                     <div class="form-group" style="text-align: right">
                                         <form class="form-horizontal style-form" method="get">
                                             <div class="form-group" style="padding: 0 40px 20px 40px">
-                                                <textarea name="comments" class="form-control" rows="5"
+                                                <textarea id="comments" name="comments" class="form-control" rows="5"
                                                placeholder="Optional comment section"></textarea>
                                             </div>
-                                            <button type="submit" class="btn btn-theme"><i class="fa fa-check" style="color:#f3f3f3"></i> SUBMIT</button>
+                                            <button type="submit" class="btn btn-theme" onclick="add_new_log_entry()"><i class="fa fa-check" style="color:#f3f3f3"></i> SUBMIT</button>
                                         </form>
                                     </div>
                                 </form>

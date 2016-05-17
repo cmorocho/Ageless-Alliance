@@ -26,6 +26,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+      <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
   </head>
 
   <body>
@@ -44,7 +46,7 @@
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../index.html">Logout</a></li>
+                    <li><a href="#0" class="logout-btn" onclick="logout()">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -59,8 +61,8 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-                  <p class="centered" style="padding-top: 20px"><a href="account_settings.html"><img src="assets/img/ui-jane.png" class="img-circle" width="50"></a></p>
-                  <h5 class="centered">Jane Doe</h5>
+                  <p class="centered" style="padding-top: 20px"><a href="account_settings.html"><img src="assets/img/ui-user.png" class="img-circle" width="50"></a></p>
+                  <h5 class="centered user_name"></h5>
 
                   <li  class="mt"><p style="color: #646a6f; text-transform: uppercase">Main</li>
                   <li class="sub-menu">
@@ -120,26 +122,7 @@
 
               <div class="row mt">
                   <h2>Account Settings</h2>
-                  <div class="col-sm-12 col-lg-2 col-lg-offset-2">
-                      <div class="white-panel pn">
-                          <div class="white-header">
-                              <h5>PROFILE</h5>
-                          </div>
-                          <p><img src="assets/img/ui-jane.png" class="img-circle" width="60"></p>
-                          <p><b>Jane Doe</b></p>
-                          <div class="row">
-                              <div class="col-md-6">
-                                  <p class="small mt">MEMBER SINCE</p>
-                                  <p>Nov 2016</p>
-                              </div>
-                              <div class="col-md-6">
-                                  <p class="small mt">TOTAL HOURS</p>
-                                  <p>18</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-sm-12 col-lg-5">
+                  <div class="col-sm-12 col-lg-5 col-lg-offset-2">
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-user"></i> Your Contact Information</h5></div>
@@ -150,18 +133,24 @@
                                   <ul class="task-list">
                                       <li>
                                           <div class="task-title">
-                                              <span class="task-title-sp">Email: <b id="current_email">janedoe@email.com</b></span>
+                                              <span class="task-title-sp">Email: <b id="current_email"></b></span>
                                               <div class="pull-right hidden-phone">
                                                   <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#changeEmail"><i class="fa fa-pencil"></i> Edit/Change</button>
                                               </div>
                                           </div>
                                       </li>
                                       <li>
-
                                           <div class="task-title">
-                                              <span class="task-title-sp">Phone Number: <b id="current_phone">(987) 654-3210</b></span>
+                                              <span class="task-title-sp">Phone Number: <b id="current_phone"></b></span>
                                               <div class="pull-right hidden-phone">
                                                   <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#changePhone"><i class="fa fa-pencil"></i> Edit/Change</button>
+                                              </div>
+                                          </div>
+                                      </li>
+                                      <li>
+                                          <div class="task-title">
+                                              <div class="hidden-phone">
+                                                  <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#changePassword"><i class="fa fa-lock"></i> Change Password</button>
                                               </div>
                                           </div>
                                       </li>
@@ -170,25 +159,35 @@
                           </div>
                       </section>
                   </div><!-- /col-->
-                  <div class="col-sm-12 col-lg-5">
+                  <div class="col-sm-12 col-lg-3">
+                      <div class="white-panel pn">
+                          <div class="white-header">
+                              <h5>PROFILE</h5>
+                          </div>
+                          <p><img src="assets/img/ui-user.png" class="img-circle" width="80"></p>
+                          <p><b class="user_name"></b></p>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <p class="small mt">MEMBER SINCE</p>
+                                  <p id="member_since"></p>
+                              </div>
+                              <div class="col-md-6">
+                                  <p class="small mt">TOTAL HOURS</p>
+                                  <p id="total_hours"></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-12 col-lg-5 col-lg-offset-2">
                       <section class="task-panel tasks-widget">
                           <div class="panel-heading">
-                              <div class="pull-left"><h5><i class="fa fa-user"></i> Your Current Links</h5></div>
+                              <div class="pull-left"><h5><i class="fa fa-users"></i> Your Current Links</h5></div>
                               <br>
                           </div>
                           <div class="panel-body">
                               <div class="task-content">
-                                  <ul class="task-list">
-                                      <li>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">Elder: <b>Carl Fredrickson</b>, (123) 456-7890</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#cancelLink">
-                                                      <i class="fa fa-times"></i> Cancel
-                                                  </button>
-                                              </div>
-                                          </div>
-                                      </li>
+                                  <ul class="task-list" id="current_links">
+
                                   </ul>
                               </div>
 
@@ -202,6 +201,36 @@
               </div><!-- /row -->
 
               <!-- Modal -->
+              <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                              <h4 class="modal-title" id="passwordLabel">Change Password</h4>
+                          </div>
+                          <div class="modal-body">
+                              <form class="form-horizontal style-form col-sm-10 col-sm-offset-1" method="get">
+                                  <div class="form-group">
+                                      <label for="old_password">Old Password: </label>
+                                      <input type="text" class="form-control" id="old_password" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="new_password">New password: </label>
+                                      <input type="text" class="form-control" id="new_password" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="confirm_new_password">Confirm new password: </label>
+                                      <input type="text" class="form-control" id="confirm_new_password" required>
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary" onclick="change_password();">Change Password</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
               <div class="modal fade" id="changeEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                       <div class="modal-content">
@@ -212,16 +241,16 @@
                           <div class="modal-body">
                               <form class="form-horizontal style-form col-sm-10 col-sm-offset-1" method="get">
                                   <div class="form-group">
-                                      <label for="old_email">Old email: </label>
-                                      <input type="text" class="form-control" id="old_email" required>
-                                  </div>
-                                  <div class="form-group">
                                       <label for="new_email">New email: </label>
                                       <input type="text" class="form-control" id="new_email" required>
                                   </div>
                                   <div class="form-group">
                                       <label for="confirm_new_email">Confirm new email: </label>
                                       <input type="text" class="form-control" id="confirm_new_email" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="email_confirm_password">Confirm the change with your account password: </label>
+                                      <input type="text" class="form-control" id="email_confirm_password" required>
                                   </div>
                               </form>
                           </div>
@@ -242,10 +271,6 @@
                           <div class="modal-body">
                               <form class="form-horizontal style-form col-sm-10 col-sm-offset-1" method="get">
                                   <div class="form-group">
-                                      <label for="old_number">Old number: </label>
-                                      <input type="text" class="form-control" id="old_number" required>
-                                  </div>
-                                  <div class="form-group">
                                       <label for="new_number">New number: </label>
                                       <input type="text" class="form-control" id="new_number" required>
                                   </div>
@@ -253,10 +278,14 @@
                                       <label for="confirm_new_number">Confirm new number: </label>
                                       <input type="text" class="form-control" id="confirm_new_number" required>
                                   </div>
+                                  <div class="form-group">
+                                      <label for="phone_confirm_password">Confirm the change with your account password: </label>
+                                      <input type="text" class="form-control" id="phone_confirm_password" required>
+                                  </div>
                               </form>                          </div>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Change Phone Number</button>
+                              <button type="button" class="btn btn-primary" onclick="change_phone_number();">Change Phone Number</button>
                           </div>
                       </div>
                   </div>
@@ -273,24 +302,7 @@
                           </div>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Send Request</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="modal fade" id="cancelLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                      <div class="modal-content">
-                          <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                              <h4 class="modal-title" id="cancelLinkLabel">Cancel Link</h4>
-                          </div>
-                          <div class="modal-body">
-                              Are you sure you want to unlink/unmatch with this elder?
-                          </div>
-                          <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                              <button type="button" class="btn btn-primary">Yes</button>
+                              <button type="button" class="btn btn-primary" onclick="another_match();">Send Request</button>
                           </div>
                       </div>
                   </div>
@@ -317,30 +329,8 @@
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="assets/js/tasks.js" type="text/javascript"></script>
-
-    <script>
-      jQuery(document).ready(function() {
-          TaskList.initTaskWidget();
-      });
-
-      $(function() {
-          $( "#sortable" ).sortable();
-          $( "#sortable" ).disableSelection();
-      });
-
-    </script>
-    
-    
-  <script>
-      //custom select box
-
-      $(function(){
-          $('select.styled').customSelect();
-      });
-
-  </script>
 
   </body>
 </html>
