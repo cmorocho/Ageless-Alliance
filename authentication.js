@@ -325,9 +325,13 @@ function add_elder() {
  */
 function add_new_log_entry() {
     var date_of_contact = document.getElementById("date").value,
+        date_of_contact_content = date_of_contact.innerHTML,
         duration_of_contact = document.getElementById("duration").value,
+        duration_of_contact_content = duration_of_contact.innerHTML,
         elder_name = document.getElementById("elder_name").value,
+        elder_name_content = elder_name.innerHTML,
         additional_comments = document.getElementById("comments").value,
+        additional_comments_content = additional_comments.innerHTML,
         elder_number;
     var entriesRef = userRef.child(authData.uid).child("log_entries"),
         userMatchesRef = userRef.child(authData.uid).child("matches");
@@ -345,7 +349,11 @@ function add_new_log_entry() {
         comments: additional_comments,
         number: elder_number
     });
-    location.reload();
+    date_of_contact.innerHTML = date_of_contact_content;
+    duration_of_contact.innerHTML = duration_of_contact_content;
+    elder_name.innerHTML = elder_name_content;
+    additional_comments.innerHTML = additional_comments_content;
+    Materialize.toast('I am a toast!', 4000);
 }
 
 /*
@@ -431,7 +439,11 @@ function update_recent_logs(user) {
     var num = 1,
         logs = "",
         log_body = document.getElementById('log_history');
-    var userLogsRef = userRef.child(authData.uid).child("log_entries");
+    var userLogsRef = userRef.child(authData.uid).child("log_entries"),
+        date = document.getElementById('last_log');
+    userLogsRef.orderByChild("date").limitToLast(1).on("child_added", function(snapshot) {
+        date.innerText = snapshot.val().date;
+    });
     userLogsRef.orderByChild("date").limitToLast(5).on("value", function(snapshot) {
         snapshot.forEach(function(data) {
             // if (num <= 5) {
