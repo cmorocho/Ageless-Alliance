@@ -28,6 +28,10 @@ if (authData) {
         update_log_history(user);
     if (window.location.pathname == "/user_accounts/account-official.html")
         update_recent_logs(user);
+    if (window.location.pathname == "/user_accounts/contact.html")
+        update_contact_page(user);
+    if (window.location.pathname == "/user_accounts/account_settings.html")
+        update_settings_page(user);
 } else {
     update_to_login();
     console.log("User is logged out");
@@ -165,6 +169,188 @@ function redirect_to_user_page() {
         console.log("The read failed: " + errorObject.code);
     });
 }
+function update_settings_page(user) {
+    var userStatusRef = userRef.child(authData.uid).child("volunteer_status"),
+        navigation_menu = document.getElementById('navigation'),
+        links = document.getElementById('description'),
+        unofficial = 0,
+        link_description = "",
+        navigation = "";
+    userStatusRef.on("value", function(snapshot) {
+        if (snapshot.val() == "official") {
+            navigation += "" +
+                "<li class='sub-menu'>" +
+                "<a href='account-official.html'>" +
+                "<i class='fa fa-home'></i>" +
+                "<span>Home</span>" +
+                "</a>" +
+                "</li>" +
+                "<li class='sub-menu'>" +
+                "<a href='log_history.html'>" +
+                "<i class='fa fa-history'></i>" +
+                "<span>Log History</span>" +
+                "</a>" +
+                "</li>" +
+                "<li class='sub-menu'>" +
+                "<a href='new_log_entry.html'>" +
+                "<i class='fa fa-pencil'></i>" +
+                "<span>Create New Log Entry</span>" +
+                "</a>" +
+                "</li>" +
+
+                "<li class='sub-menu'>" +
+                "<a href='javascript:;' class='active'>" +
+                "<i class='fa fa-cogs'></i>" +
+                "<span>Account Settings</span>" +
+                "</a>" +
+                "<ul class='sub'>" +
+                "<li><a  href='account_settings.html'>Edit Account</a></li>" +
+                "<li><a  href='#0' onclick='logout()'>Logout</a></li>" +
+                "</ul>" +
+                "</li>" +
+                "<li><p style='color: #646a6f; padding-top: 30px; text-transform: uppercase'>Support</p></li>" +
+                "<li class='sub-menu'>" +
+                "<a href='contact.html'>" +
+                "<i class='fa fa-user'></i>" +
+                "<span>Contact</span>" +
+                "</a>" +
+                "</li>" +
+                "<li class='sub-menu'>" +
+                "<a href='handbook.html'>" +
+                "<i class='fa fa-book'></i>" +
+                "<span>Handbook</span>" +
+                "</a>" +
+                "</li>";
+        }
+        else if (snapshot.val() == "unofficial") {
+            unofficial = 1;
+            link_description = "To be able to link with elders, " +
+                "you must first complete the checklist on your 'Home' page. If you have any questions or concerns, or are in " +
+                "need of assistance in completing the checklist tasks, please contact Ageless Alliance. We look forward to " +
+                "connecting you with an elder in the future!";
+            navigation += "" +
+                "<li class='sub-menu'>" +
+                "<a href='volunteer-training.html'>" +
+                "<i class='fa fa-home'></i>" +
+                "<span>Home</span>" +
+                "</a>" +
+                "</li>" +
+
+                "<li class='sub-menu'>" +
+                "<a href='javascript:;' class='active'>" +
+                "<i class='fa fa-cogs'></i>" +
+                "<span>Account Settings</span>" +
+                "</a>" +
+                "<ul class='sub'>" +
+                "<li><a  href='account_settings.html'>Edit Account</a></li>" +
+                "<li><a  href='#0' onclick='logout()'>Logout</a></li>" +
+                "</ul>" +
+                "</li>" +
+                "<li><p style='color: #646a6f; padding-top: 30px; text-transform: uppercase'>Support</p></li>" +
+                "<li class='sub-menu'>" +
+                "<a href='contact.html'>" +
+                "<i class='fa fa-user'></i>" +
+                "<span>Contact</span>" +
+                "</a>" +
+                "</li>";
+        }
+        if (unofficial == 1) {
+            document.getElementById("match_request").disabled = true;
+            links.innerHTML = link_description;
+        }
+        navigation_menu.innerHTML = navigation;
+    }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
+}
+function update_contact_page(user) {
+    var userStatusRef = userRef.child(authData.uid).child("volunteer_status"),
+        navigation_menu = document.getElementById('navigation'),
+        message = document.getElementById("contact_intro"),
+        navigation = "";
+    userStatusRef.on("value", function(snapshot) {
+        if (snapshot.val() == "official") {
+            message.innerText = "In case of emergency, call 9-1-1 immediately. For handbook article suggestions, website bug reports, or any " +
+            "further feedback and concerns, we'd love to hear from you! Feel free to " +
+            "send us a message below or call Ageless Alliance with the phone number listed above.";
+            navigation += "" +
+                "<li class='sub-menu'>" +
+                    "<a href='account-official.html'>" +
+                    "<i class='fa fa-home'></i>" +
+                    "<span>Home</span>" +
+                    "</a>" +
+                "</li>" +
+                "<li class='sub-menu'>" +
+                    "<a href='log_history.html'>" +
+                    "<i class='fa fa-history'></i>" +
+                    "<span>Log History</span>" +
+                    "</a>" +
+                "</li>" +
+                "<li class='sub-menu'>" +
+                    "<a href='new_log_entry.html'>" +
+                        "<i class='fa fa-pencil'></i>" +
+                        "<span>Create New Log Entry</span>" +
+                    "</a>" +
+                "</li>" +
+
+                "<li class='sub-menu'>" +
+                    "<a href='javascript:;' >" +
+                        "<i class='fa fa-cogs'></i>" +
+                        "<span>Account Settings</span>" +
+                    "</a>" +
+                    "<ul class='sub'>" +
+                        "<li><a  href='account_settings.html'>Edit Account</a></li>" +
+                        "<li><a  href='#0' onclick='logout()'>Logout</a></li>" +
+                    "</ul>" +
+                "</li>" +
+                "<li><p style='color: #646a6f; padding-top: 30px; text-transform: uppercase'>Support</p></li>" +
+                "<li class='sub-menu'>" +
+                    "<a href='contact.html' class='active'>" +
+                        "<i class='fa fa-user'></i>" +
+                        "<span>Contact</span>" +
+                    "</a>" +
+                "</li>" +
+                "<li class='sub-menu'>" +
+                    "<a href='handbook.html'>" +
+                        "<i class='fa fa-book'></i>" +
+                        "<span>Handbook</span>" +
+                    "</a>" +
+                "</li>";
+        }
+        else if (snapshot.val() == "unofficial") {
+            message.innerText = "For any feedback and concerns, we'd love to hear from you! Feel free to " +
+                "send us a message below or call Ageless Alliance with the phone number listed above.";
+            navigation += "" +
+                "<li class='sub-menu'>" +
+                    "<a href='volunteer-training.html'>" +
+                        "<i class='fa fa-home'></i>" +
+                        "<span>Home</span>" +
+                    "</a>" +
+                "</li>" +
+
+                "<li class='sub-menu'>" +
+                    "<a href='javascript:;' >" +
+                        "<i class='fa fa-cogs'></i>" +
+                        "<span>Account Settings</span>" +
+                    "</a>" +
+                    "<ul class='sub'>" +
+                        "<li><a  href='account_settings.html'>Edit Account</a></li>" +
+                        "<li><a  href='#0' onclick='logout()'>Logout</a></li>" +
+                    "</ul>" +
+                "</li>" +
+                "<li><p style='color: #646a6f; padding-top: 30px; text-transform: uppercase'>Support</p></li>" +
+                "<li class='sub-menu'>" +
+                    "<a href='contact.html' class='active'>" +
+                        "<i class='fa fa-user'></i>" +
+                        "<span>Contact</span>" +
+                    "</a>" +
+                "</li>";
+        }
+        navigation_menu.innerHTML = navigation;
+    }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
+}
 function update_user_info(authData) {
     userRef.on("value", function(snapshot) {
         snapshot.forEach(function(data) {
@@ -206,7 +392,7 @@ function update_current_links() {
                     "<li>" +
                     "<div class='task-title'>" +
                     "<span class='task-title-sp'>Elder: <b>" + data.val().name + "</b>, " + data.val().phone_number + "</span>" +
-                    "</div>"
+                    "</div>" +
                 "</li>";
             }
         });

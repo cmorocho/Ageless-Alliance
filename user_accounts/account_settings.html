@@ -65,48 +65,31 @@
                   <h5 class="centered user_name"></h5>
 
                   <li  class="mt"><p style="color: #646a6f; text-transform: uppercase">Main</li>
-                  <li class="sub-menu">
-                      <a href="account-official.html">
-                          <i class="fa fa-home"></i>
-                          <span>Home</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="log_history.html" >
-                          <i class="fa fa-history"></i>
-                          <span>Log History</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="new_log_entry.html" >
-                          <i class="fa fa-pencil"></i>
-                          <span>Create New Log Entry</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" class="active">
-                          <i class="fa fa-cogs"></i>
-                          <span>Account Settings</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="account_settings.html">Edit Account</a></li>
-                          <li><a  href="../index.html">Logout</a></li>
-                      </ul>
-                  </li>
-                  <li><p style="color: #646a6f; padding-top: 30px; text-transform: uppercase">Support</p></li>
-                  <li class="sub-menu">
-                      <a href="contact.html" >
-                          <i class="fa fa-user"></i>
-                          <span>Contact</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="handbook.html">
-                          <i class=" fa fa-book"></i>
-                          <span>Handbook</span>
-                      </a>
-                  </li>
-
+                  <div id="navigation">
+                      <li class="sub-menu">
+                          <a href="account-official.html">
+                              <i class="fa fa-home"></i>
+                              <span>Home</span>
+                          </a>
+                      </li>
+                      <li class="sub-menu">
+                          <a href="javascript:;" class="active">
+                              <i class="fa fa-cogs"></i>
+                              <span>Account Settings</span>
+                          </a>
+                          <ul class="sub">
+                              <li><a  href="account_settings.html">Edit Account</a></li>
+                              <li><a  href="../index.html">Logout</a></li>
+                          </ul>
+                      </li>
+                      <li><p style="color: #646a6f; padding-top: 30px; text-transform: uppercase">Support</p></li>
+                      <li class="sub-menu">
+                          <a href="contact.html" >
+                              <i class="fa fa-user"></i>
+                              <span>Contact</span>
+                          </a>
+                      </li>
+                  </div>
               </ul>
               <!-- sidebar menu end-->
           </div>
@@ -186,12 +169,13 @@
                           </div>
                           <div class="panel-body">
                               <div class="task-content">
+                                  <div id="description"></div>
                                   <ul class="task-list" id="current_links">
 
                                   </ul>
                               </div>
 
-                              <button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#request">
+                              <button class="btn btn-success btn-sm pull-right" id="match_request" data-toggle="modal" data-target="#request">
                                   <i class="fa fa-plus-circle"></i> Request an Additional Match
                               </button>
                           </div>

@@ -462,33 +462,14 @@ label .glyphicon {
                   <h5 class="centered user_name"></h5>
 
                   <li  class="mt"><p style="color: #646a6f; text-transform: uppercase">Main</li>
-                 
+
                   <li class="sub-menu">
-                      <a href="volunteer-training.html">
+                      <a href="volunteer-training.html" class="active">
                           <i class="fa fa-home"></i>
                           <span>Home</span>
                       </a>
                   </li>
-                  
-                  <li class="sub-menu">
-                      <a href="volunteer-training.html" class="active">
-                          <i class="fa fa-book"></i>
-                          <span>Volunteer Training</span>
-                      </a>
-                  </li>
-                  
-                  <li class="sub-menu">
-                      <a href="log_history.html" >
-                          <i class="fa fa-history"></i>
-                          <span>Log History</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="new_log_entry.html" >
-                          <i class="fa fa-pencil"></i>
-                          <span>Create New Log Entry</span>
-                      </a>
-                  </li>
+
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>
@@ -516,12 +497,13 @@ label .glyphicon {
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
-      <div class="content-wrapper">
+      <section id="main-content">
+          <section class="wrapper">
             
                  <!-- Top content -->
        
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                    <div class="row mt">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-lg-offset-2 col-md-offset-2" form-box">
                             
                             <form role="form" action="" method="post" class="registration-form">
                                 
@@ -931,40 +913,40 @@ Make a report to the appropriate agencies. I don't have to have all the facts; I
         });
 	</script>
 	
-	<script type="application/javascript">
-        $(document).ready(function () {
-            $("#date-popover").popover({html: true, trigger: "manual"});
-            $("#date-popover").hide();
-            $("#date-popover").click(function (e) {
-                $(this).hide();
-            });
-        
-            $("#my-calendar").zabuto_calendar({
-                action: function () {
-                    return myDateFunction(this.id, false);
-                },
-                action_nav: function () {
-                    return myNavFunction(this.id);
-                },
-                ajax: {
-                    url: "show_data.php?action=1",
-                    modal: true
-                },
-                legend: [
-                    {type: "text", label: "Special event", badge: "00"},
-                    {type: "block", label: "Regular event", }
-                ]
-            });
-        });
-        
-        
-        function myNavFunction(id) {
-            $("#date-popover").hide();
-            var nav = $("#" + id).data("navigation");
-            var to = $("#" + id).data("to");
-            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
-        }
-    </script>
+	<!--<script type="application/javascript">-->
+        <!--$(document).ready(function () {-->
+            <!--$("#date-popover").popover({html: true, trigger: "manual"});-->
+            <!--$("#date-popover").hide();-->
+            <!--$("#date-popover").click(function (e) {-->
+                <!--$(this).hide();-->
+            <!--});-->
+        <!---->
+            <!--$("#my-calendar").zabuto_calendar({-->
+                <!--action: function () {-->
+                    <!--return myDateFunction(this.id, false);-->
+                <!--},-->
+                <!--action_nav: function () {-->
+                    <!--return myNavFunction(this.id);-->
+                <!--},-->
+                <!--ajax: {-->
+                    <!--url: "show_data.php?action=1",-->
+                    <!--modal: true-->
+                <!--},-->
+                <!--legend: [-->
+                    <!--{type: "text", label: "Special event", badge: "00"},-->
+                    <!--{type: "block", label: "Regular event", }-->
+                <!--]-->
+            <!--});-->
+        <!--});-->
+        <!---->
+        <!---->
+        <!--function myNavFunction(id) {-->
+            <!--$("#date-popover").hide();-->
+            <!--var nav = $("#" + id).data("navigation");-->
+            <!--var to = $("#" + id).data("to");-->
+            <!--console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);-->
+        <!--}-->
+    <!--</script>-->
   
 
   </body>
