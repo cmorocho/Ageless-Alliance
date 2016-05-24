@@ -2739,12 +2739,12 @@ Link Effect 2 : 3D rolling links
     position: relative;
     max-width: 100%;
     height: auto;
-    min-height: 48px;
+    min-height: 55px;
     line-height: 1.5em;
     word-break: break-all;
-    background-color: #323232;
+    background-color: #FA9D7F;
     padding: 10px 25px;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 300;
     color: #fff;
     display: -webkit-flex;

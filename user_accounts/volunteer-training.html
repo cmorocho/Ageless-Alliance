@@ -27,8 +27,8 @@
 
     <script src="assets/js/chart-master/Chart.js"></script>
     <!-- og code -->
-    
-    
+
+
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -471,15 +471,21 @@ label .glyphicon {
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a href="account_settings.html">
                           <i class="fa fa-cogs"></i>
                           <span>Account Settings</span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="account_settings.html">Edit Account</a></li>
-                          <li><a  href="#0" onclick="logout()">Logout</a></li>
-                      </ul>
                   </li>
+                  <!--<li class="sub-menu">-->
+                      <!--<a href="javascript:;" >-->
+                          <!--<i class="fa fa-cogs"></i>-->
+                          <!--<span>Account Settings</span>-->
+                      <!--</a>-->
+                      <!--<ul class="sub">-->
+                          <!--<li><a  href="account_settings.html">Edit Account</a></li>-->
+                          <!--<li><a  href="#0" onclick="logout()">Logout</a></li>-->
+                      <!--</ul>-->
+                  <!--</li>-->
                   <li><p style="color: #646a6f; padding-top: 30px; text-transform: uppercase">Support</p></li>
                   <li class="sub-menu">
                       <a href="contact.html" >
@@ -873,17 +879,16 @@ Make a report to the appropriate agencies. I don't have to have all the facts; I
         <script src="assets/js/jquery-checklist.backstretch.min.js"></script>
         <script src="assets/js/retina-1.1.0.min.js"></script>
         <script src="assets/js/scripts.js"></script>
-  <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="assets/js/jquery.scrollTo.min.js"></script>
+  <!--<script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>-->
+  <!--<script src="assets/js/jquery.scrollTo.min.js"></script>-->
 
 
   <!-- end volunteer js -->
 
+  <script type="text/javascript" src="../js/materialize/materialize.min.js"></script>
 
 
-
-    <script src="assets/js/common-scripts.js"></script>
-
+    <!--<script src="assets/js/common-scripts.js"></script>-->
     <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
 
@@ -912,42 +917,6 @@ Make a report to the appropriate agencies. I don't have to have all the facts; I
         return false;
         });
 	</script>
-	
-	<!--<script type="application/javascript">-->
-        <!--$(document).ready(function () {-->
-            <!--$("#date-popover").popover({html: true, trigger: "manual"});-->
-            <!--$("#date-popover").hide();-->
-            <!--$("#date-popover").click(function (e) {-->
-                <!--$(this).hide();-->
-            <!--});-->
-        <!---->
-            <!--$("#my-calendar").zabuto_calendar({-->
-                <!--action: function () {-->
-                    <!--return myDateFunction(this.id, false);-->
-                <!--},-->
-                <!--action_nav: function () {-->
-                    <!--return myNavFunction(this.id);-->
-                <!--},-->
-                <!--ajax: {-->
-                    <!--url: "show_data.php?action=1",-->
-                    <!--modal: true-->
-                <!--},-->
-                <!--legend: [-->
-                    <!--{type: "text", label: "Special event", badge: "00"},-->
-                    <!--{type: "block", label: "Regular event", }-->
-                <!--]-->
-            <!--});-->
-        <!--});-->
-        <!---->
-        <!---->
-        <!--function myNavFunction(id) {-->
-            <!--$("#date-popover").hide();-->
-            <!--var nav = $("#" + id).data("navigation");-->
-            <!--var to = $("#" + id).data("to");-->
-            <!--console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);-->
-        <!--}-->
-    <!--</script>-->
-  
 
   </body>
 </html>

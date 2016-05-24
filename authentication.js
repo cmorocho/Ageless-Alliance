@@ -1,4 +1,14 @@
 var ref, dataRef, userRef, elderRef, elderData, userData, user;
+var TOAST = {
+    NONE : {value: -1, name: "none", message: "none"},
+    SIGNUP : {value: 0, name: "signup", message: "Your new account has been created! Please log in."},
+    FAILED_SIGNUP : {value: 2, name: "failed_login", message: "Failed to signup. Please try again."},
+    FAILED_LOGIN : {value: 2, name: "failed_login", message: "Incorrect email or password. Please try again."},
+    NEW_LOG_ENTRY : {value: 2, name: "new_log_entry", message: "We received your new log entry. Thank you!"},
+    ADDED_MATCH: {value: 2, name: "added_match", message: "You have been matched with a new elder!"},
+    UPDATED_USER_INFO  : {value: 2, name: "updated_user_info", message: "Your user information has been updated."}
+};
+
 
 (function (jQuery, Firebase) {
     "use strict";
@@ -15,6 +25,8 @@ var ref, dataRef, userRef, elderRef, elderData, userData, user;
 check if a user is already logged in
  */
 var authData = ref.getAuth();
+$(document).ready(function () {
+
 if (authData) {
     console.log("User " + authData.uid + " is logged in with " + authData.provider);
     user = new Firebase("https://ageless-link.firebaseio.com/users/"+authData.uid);
@@ -22,6 +34,7 @@ if (authData) {
     get_user_data();
     update_user_info(authData);
     update_to_logout();
+    check_toast();
     if (window.location.pathname == "/user_accounts/new_log_entry.html")
         update_elder_options(user);
     if (window.location.pathname == "/user_accounts/log_history.html")
@@ -36,6 +49,24 @@ if (authData) {
     update_to_login();
     console.log("User is logged out");
 }
+});
+
+
+
+/*
+    check for toast notification dialog
+ */
+function check_toast() {
+    if (!sessionStorage) {
+        sessionStorage.toast = TOAST.NONE.message;
+    } else if (sessionStorage.toast != "none") {
+        Materialize.toast(sessionStorage.toast, 4000);
+        console.log("toast received: " + sessionStorage.toast);
+        sessionStorage.toast = TOAST.NONE.message;
+    }
+    console.log("checking toast: " + sessionStorage.toast);
+}
+
 
 /*
     get userData and elderData
@@ -108,9 +139,12 @@ function create_account() {
     }, function(error, userData) {
         if (error) {
             console.log("Error creating user:", error);
+            sessionStorage.toast = "Error creating user:" + error;
+            check_toast();
         } else {
             console.log("Successfully created user account with uid:", userData.uid);
             add_new_user_to_database(userData, newEmail);
+            sessionStorage.toast = TOAST.SIGNUP.message;
             redirect_to_login();
         }
     });
@@ -148,6 +182,9 @@ function login() {
     }, function(error, authData) {
         if (error) {
             console.log("Login Failed!", error);
+            sessionStorage.toast = "Login Failed!" + error;
+            check_toast();
+
         } else {
             console.log("Authenticated successfully with payload:", authData);
             redirect_to_user_page();
@@ -197,16 +234,11 @@ function update_settings_page(user) {
                 "<span>Create New Log Entry</span>" +
                 "</a>" +
                 "</li>" +
-
                 "<li class='sub-menu'>" +
-                "<a href='javascript:;' class='active'>" +
+                "<a href='account_settings.html' class='active'>" +
                 "<i class='fa fa-cogs'></i>" +
                 "<span>Account Settings</span>" +
                 "</a>" +
-                "<ul class='sub'>" +
-                "<li><a  href='account_settings.html'>Edit Account</a></li>" +
-                "<li><a  href='#0' onclick='logout()'>Logout</a></li>" +
-                "</ul>" +
                 "</li>" +
                 "<li><p style='color: #646a6f; padding-top: 30px; text-transform: uppercase'>Support</p></li>" +
                 "<li class='sub-menu'>" +
@@ -235,16 +267,11 @@ function update_settings_page(user) {
                 "<span>Home</span>" +
                 "</a>" +
                 "</li>" +
-
                 "<li class='sub-menu'>" +
-                "<a href='javascript:;' class='active'>" +
+                "<a href='account_settings.html' class='active'>" +
                 "<i class='fa fa-cogs'></i>" +
                 "<span>Account Settings</span>" +
                 "</a>" +
-                "<ul class='sub'>" +
-                "<li><a  href='account_settings.html'>Edit Account</a></li>" +
-                "<li><a  href='#0' onclick='logout()'>Logout</a></li>" +
-                "</ul>" +
                 "</li>" +
                 "<li><p style='color: #646a6f; padding-top: 30px; text-transform: uppercase'>Support</p></li>" +
                 "<li class='sub-menu'>" +
@@ -292,16 +319,11 @@ function update_contact_page(user) {
                         "<span>Create New Log Entry</span>" +
                     "</a>" +
                 "</li>" +
-
                 "<li class='sub-menu'>" +
-                    "<a href='javascript:;' >" +
-                        "<i class='fa fa-cogs'></i>" +
-                        "<span>Account Settings</span>" +
-                    "</a>" +
-                    "<ul class='sub'>" +
-                        "<li><a  href='account_settings.html'>Edit Account</a></li>" +
-                        "<li><a  href='#0' onclick='logout()'>Logout</a></li>" +
-                    "</ul>" +
+                "<a href='account_settings.html'>" +
+                "<i class='fa fa-cogs'></i>" +
+                "<span>Account Settings</span>" +
+                "</a>" +
                 "</li>" +
                 "<li><p style='color: #646a6f; padding-top: 30px; text-transform: uppercase'>Support</p></li>" +
                 "<li class='sub-menu'>" +
@@ -327,16 +349,11 @@ function update_contact_page(user) {
                         "<span>Home</span>" +
                     "</a>" +
                 "</li>" +
-
                 "<li class='sub-menu'>" +
-                    "<a href='javascript:;' >" +
-                        "<i class='fa fa-cogs'></i>" +
-                        "<span>Account Settings</span>" +
-                    "</a>" +
-                    "<ul class='sub'>" +
-                        "<li><a  href='account_settings.html'>Edit Account</a></li>" +
-                        "<li><a  href='#0' onclick='logout()'>Logout</a></li>" +
-                    "</ul>" +
+                "<a href='account_settings.html'>" +
+                "<i class='fa fa-cogs'></i>" +
+                "<span>Account Settings</span>" +
+                "</a>" +
                 "</li>" +
                 "<li><p style='color: #646a6f; padding-top: 30px; text-transform: uppercase'>Support</p></li>" +
                 "<li class='sub-menu'>" +
@@ -437,6 +454,8 @@ function change_password() {
     }, function(error) {
         if (error === null) {
             console.log("Password changed successfully");
+            Materialize.toast(TOAST.UPDATED_USER_INFO.message, 4000);
+            check_toast();
         } else {
             console.log("Error changing password:", error);
         }
@@ -452,10 +471,11 @@ function change_email() {
         newEmail : changed_email,
         password : confirm_password
     }, function(error) {
-        if (error === null) {
+        if (error == null) {
             console.log("Email changed successfully");
             //user_email.innerText = changed_email;
             update_user_info(authData);
+            Materialize.toast(TOAST.UPDATED_USER_INFO.message, 4000);
             location.reload();
         } else {
             console.log("Error changing email:", error);
@@ -472,6 +492,7 @@ function change_phone_number() {
     });
     //user_phone.innerText = new_phone_number;
     update_user_info(authData);
+    Materialize.toast(TOAST.UPDATED_USER_INFO.message, 4000);
     location.reload();
 }
 
@@ -511,13 +532,9 @@ function add_elder() {
  */
 function add_new_log_entry() {
     var date_of_contact = document.getElementById("date").value,
-        date_of_contact_content = date_of_contact.innerHTML,
         duration_of_contact = document.getElementById("duration").value,
-        duration_of_contact_content = duration_of_contact.innerHTML,
         elder_name = document.getElementById("elder_name").value,
-        elder_name_content = elder_name.innerHTML,
         additional_comments = document.getElementById("comments").value,
-        additional_comments_content = additional_comments.innerHTML,
         elder_number;
     var entriesRef = userRef.child(authData.uid).child("log_entries"),
         userMatchesRef = userRef.child(authData.uid).child("matches");
@@ -535,11 +552,8 @@ function add_new_log_entry() {
         comments: additional_comments,
         number: elder_number
     });
-    date_of_contact.innerHTML = date_of_contact_content;
-    duration_of_contact.innerHTML = duration_of_contact_content;
-    elder_name.innerHTML = elder_name_content;
-    additional_comments.innerHTML = additional_comments_content;
-    Materialize.toast('I am a toast!', 4000);
+    sessionStorage.toast = TOAST.NEW_LOG_ENTRY.message;
+    location.reload();
 }
 
 /*
@@ -577,6 +591,7 @@ function unmatch() {
 function another_match() {
     match();
     update_user_info(authData);
+    sessionStorage.toast = TOAST.ADDED_MATCH.message;
     location.reload();
 }
 
@@ -601,47 +616,65 @@ function update_elder_options(user) {
     update log history
  */
 function update_log_history(user) {
-    var num = 1,
-        logs = "",
-        log_body = document.getElementById('log_history');
-    var userLogsRef = userRef.child(authData.uid).child("log_entries");
-    userLogsRef.orderByChild("date").limitToLast(100).on("value", function(snapshot) {
-        snapshot.forEach(function(data) {
-            if (num%2 == 1)
-                logs += "<tr role='row' class='odd'><td>" + data.val().date + "</td><td>" + data.val().duration + "</td><td>" + data.val().elder + "</td><td>" + data.val().number + "</td><td>" + data.val().comments + "</td></tr>";
-            else
-                logs += "<tr role='row' class='even'><td>" + data.val().date + "</td><td>" + data.val().duration + "</td><td>" + data.val().elder + "</td><td>" + data.val().number + "</td><td>" + data.val().comments + "</td></tr>";
-            num++;
-        });
-        log_body.innerHTML = logs;
-    }, function (errorObject) {
-        console.log("The read failed: " + errorObject.code);
+    $.get("https://ageless-link.firebaseio.com/users/" + authData.uid + "/log_entries.json", function(data) {
+        var dataSet = [];
+        console.log("https://ageless-link.firebaseio.com/users/" + authData.uid + "/log_entries.json");
+        for(var d in data) {
+            var row = [];
+            row.push(data[d]['date']);
+            row.push(data[d]['elder']);
+            row.push(data[d]['number']);
+            row.push(data[d]['duration']);
+            row.push(data[d]['comments']);
+            dataSet.push(row);
+        }
+        console.log(dataSet);
+
+        $('#example').DataTable( {
+            data: dataSet,
+            "order" : [[0, "desc"]],
+            columns: [
+                { title: "Date" },
+                { title: "Elder" },
+                { title: "Number" },
+                { title: "Duration" },
+                { title: "Comments" }
+            ]
+        } );
     });
 }
 /*
  update most recent logs displayed on home page
  */
 function update_recent_logs(user) {
-    var num = 1,
-        logs = "",
-        log_body = document.getElementById('log_history');
-    var userLogsRef = userRef.child(authData.uid).child("log_entries"),
-        date = document.getElementById('last_log');
-    userLogsRef.orderByChild("date").limitToLast(1).on("child_added", function(snapshot) {
-        date.innerText = snapshot.val().date;
-    });
-    userLogsRef.orderByChild("date").limitToLast(5).on("value", function(snapshot) {
-        snapshot.forEach(function(data) {
-            // if (num <= 5) {
-                if (num % 2 == 1)
-                    logs += "<tr role='row' class='odd'><td>" + data.val().date + "</td><td>" + data.val().duration + "</td><td>" + data.val().elder + "</td><td>" + data.val().number + "</td><td>" + data.val().comments + "</td></tr>";
-                else
-                    logs += "<tr role='row' class='even'><td>" + data.val().date + "</td><td>" + data.val().duration + "</td><td>" + data.val().elder + "</td><td>" + data.val().number + "</td><td>" + data.val().comments + "</td></tr>";
+    $.get("https://ageless-link.firebaseio.com/users/" + authData.uid + "/log_entries.json", function(data) {
+        var dataSet = [],
+            num = 0;
+        for(var d in data) {
+            if (num < 5) {
+                var row = [];
+                row.push(data[d]['date']);
+                row.push(data[d]['elder']);
+                row.push(data[d]['number']);
+                row.push(data[d]['duration']);
+                row.push(data[d]['comments']);
+                dataSet.push(row);
                 num++;
-            // }
-        });
-        log_body.innerHTML = logs;
-    }, function (errorObject) {
-        console.log("The read failed: " + errorObject.code);
+            }
+        }
+
+        $('#example').DataTable( {
+            data: dataSet,
+            "order" : [[0, "desc"]],
+            paging: false,
+            searching: false,
+            columns: [
+                { title: "Date" },
+                { title: "Elder" },
+                { title: "Number" },
+                { title: "Duration" },
+                { title: "Comments" }
+            ]
+        } );
     });
 }
