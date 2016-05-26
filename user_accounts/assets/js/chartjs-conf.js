@@ -3,24 +3,16 @@ var Script = function () {
 
     var doughnutData = [
         {
-            value: 30,
-            color:"#1abc9c"
+            value: 18,
+            color:"#4ba8c9"
         },
         {
-            value : 50,
-            color : "#2ecc71"
+            value : 20,
+            color : "#FF865C"
         },
         {
-            value : 100,
-            color : "#3498db"
-        },
-        {
-            value : 40,
-            color : "#9b59b6"
-        },
-        {
-            value : 120,
-            color : "#34495e"
+            value : 10,
+            color : "#444c57"
         }
 
     ];

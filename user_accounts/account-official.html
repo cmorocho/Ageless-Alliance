@@ -30,8 +30,8 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+      <!--<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
       <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <![endif]-->
 
@@ -148,7 +148,7 @@
 
               <div class="row mt">
                   <div class="col-lg-2 col-md-2 col-sm-12 col-lg-offset-2 col-md-offset-2 mb">
-                      <div class="logged-hours pn">
+                      <div class="white-panel pn">
                           <div class="darkblue-header">
                               <p>YOU HAVE LOGGED IN</p>
                           </div>
@@ -156,7 +156,7 @@
                           <p>hours so far</p>
                           <footer>
                               <div class="centered">
-                                  <h5><i class="fa fa-clock-o"></i> Last log was on <b id="last_log"></b></h5>
+                                  <h4><i class="fa fa-clock-o"></i> Last log was on <b id="last_log"></b></h4>
                               </div>
                           </footer>
                       </div><! -- /logged hours panel -->
@@ -226,7 +226,7 @@
         return false;
         });
 	</script>
-	
+
 	<script type="application/javascript">
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
@@ -234,7 +234,7 @@
             $("#date-popover").click(function (e) {
                 $(this).hide();
             });
-        
+
             $("#my-calendar").zabuto_calendar({
                 action: function () {
                     return myDateFunction(this.id, false);
@@ -252,8 +252,8 @@
                 ]
             });
         });
-        
-        
+
+
         function myNavFunction(id) {
             $("#date-popover").hide();
             var nav = $("#" + id).data("navigation");
@@ -261,7 +261,7 @@
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     </script>
-  
+
 
   </body>
 </html>

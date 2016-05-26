@@ -45,6 +45,8 @@ if (authData) {
         update_contact_page(user);
     if (window.location.pathname == "/user_accounts/account_settings.html")
         update_settings_page(user);
+    if (window.location.pathname == "/user_accounts/administrator.html")
+        update_administrator_page();
 } else {
     update_to_login();
     console.log("User is logged out");
@@ -144,7 +146,6 @@ function create_account() {
         } else {
             console.log("Successfully created user account with uid:", userData.uid);
             add_new_user_to_database(userData, newEmail);
-            sessionStorage.toast = TOAST.SIGNUP.message;
             redirect_to_login();
         }
     });
@@ -200,6 +201,8 @@ function redirect_to_user_page() {
                     window.location = 'user_accounts/account-official.html';
                 else if (data.val().volunteer_status == "unofficial")
                     window.location = 'user_accounts/volunteer-training.html';
+                else if (data.val().volunteer_status == "administrator")
+                    window.location = 'user_accounts/administrator.html';
             }
         });
     }, function (errorObject) {
@@ -677,4 +680,88 @@ function update_recent_logs(user) {
             ]
         } );
     });
+}
+
+/*
+    administrator
+ */
+function update_administrator_page() {
+    var total_volunteers = 0,
+        total_training = 0,
+        total_elders = 0;
+    $.get("https://ageless-link.firebaseio.com/elders.json", function(data) {
+        var dashboard_elders = document.getElementById('elders');
+        for(var d in data) {
+            total_elders++;
+        }
+        dashboard_elders.innerText = total_elders;
+    });
+    $.get("https://ageless-link.firebaseio.com/users.json", function(data) {
+        var dashboard_volunteers = document.getElementById('volunteers'),
+            dashboard_training = document.getElementById('training');
+        for(var d in data) {
+            if (data[d]['volunteer_status'] == "official") total_volunteers++;
+            else if (data[d]['volunteer_status'] == "unofficial") total_training++;
+        }
+        dashboard_volunteers.innerText = total_volunteers;
+        dashboard_training.innerText = total_training;
+    });
+    get_total_hours();
+    get_matches();
+}
+var total = 0;
+function get_total_hours(user) {
+    userRef.on("value", function(snapshot) {
+        var dashboard_hours = document.getElementById('total_hours');
+        snapshot.forEach(function(data) {
+            if (data.val().volunteer_status == "official") {
+                $.get("https://ageless-link.firebaseio.com/users/" + data.key() + "/log_entries.json", function(user) {
+                    for(var d in user) {
+                        total += parseFloat(user[d]['duration']);
+                    }
+                    dashboard_hours.innerText = total;
+                });
+            }
+        });
+    }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
+}
+
+var matches = "";
+function get_matches() {
+    userRef.on("value", function(snapshot) {
+        var dashboard_matches = document.getElementById('matches');
+        snapshot.forEach(function(data) {
+            if (data.val().volunteer_status == "official") {
+                $.get("https://ageless-link.firebaseio.com/users/" + data.key() + "/matches.json", function(user) {
+                    for(var d in user) {
+                        matches += "<tr><td>" + data.val().name + "</td><td>" + user[d]['name'] + "</td></tr>"
+                    }
+                    dashboard_matches.innerHTML = matches;
+                });
+            }
+        });
+    }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
+
+    // $.get("https://ageless-link.firebaseio.com/users.json", function(data) {
+    //     var dataSet = [];
+    //     var dashboard_matches= document.getElementById('matches'),
+    //         table="";
+    //     for(var d in data) {
+    //         if (data[d]['volunteer_status'] == "official") {
+    //             var match = [];
+    //             match.push(data[d]['name']);
+    //             match.push(data[d]['matches']['name']);
+    //             dataSet.push(match);
+    //         }
+    //     }
+    //
+    //     for (var i=0; i<dataSet.length; i++) {
+    //         table += "<tr><td>" + dataSet[0][0] + "</td><td>" + dataSet[0][1] + "</td></tr>"
+    //     }
+    //     dashboard_matches.innerHTML = table;
+    // });
 }
