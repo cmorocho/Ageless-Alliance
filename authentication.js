@@ -125,7 +125,7 @@ function update_to_login() {
         login_indicator2 = document.getElementById('login-indicator2');
     if (login_indicator1 != null && login_indicator2 != null) {
         login_indicator1.innerHTML = "<a href='login.html' class='link'>Log in</a>";
-        login_indicator2.innerHTML = "<a href='signup.html' class='btn btn-accent btn-small'>Sign up</a>";
+        login_indicator2.innerHTML = "<a href='signup.html' class='btn btn-accent btn-small'>Become a Volunteer</a>";
     }
 }
 
@@ -636,6 +636,7 @@ function update_log_history(user) {
         $('#example').DataTable( {
             data: dataSet,
             "order" : [[0, "desc"]],
+            "autoWidth" : true,
             columns: [
                 { title: "Date" },
                 { title: "Elder" },
@@ -669,6 +670,7 @@ function update_recent_logs(user) {
         $('#example').DataTable( {
             data: dataSet,
             "order" : [[0, "desc"]],
+            "autoWidth" : true,
             paging: false,
             searching: false,
             columns: [
